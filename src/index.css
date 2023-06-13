@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "casanova";
+  src: url("./assets/fonts/casanova.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "casanova";
+  font-size: 50px;
+  font-weight: 400;
+}
