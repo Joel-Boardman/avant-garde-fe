@@ -6,6 +6,9 @@ import Perfection from "../components/Perfection";
 import Trusted from "../components/Trusted";
 import Excellence from "../components/Excellence";
 import Purchasing from "../components/Purchasing";
+import Testimonials from "../components/Testimonials";
+import ImgBanner from "../components/ImgBanner";
+import Living from "../components/Living";
 
 const LandingPage: React.FC = () => {
   return (
@@ -15,6 +18,9 @@ const LandingPage: React.FC = () => {
       <Trusted />
       <Excellence />
       <Purchasing />
+      <Testimonials />
+      <ImgBanner />
+      <Living />
     </>
   );
 };
