@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   padding: 160px 0;
+  background: white;
 `;
 
 export const Content = styled.div`

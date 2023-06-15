@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   padding: 140px 0;
+  background: white;
 
   .info {
     margin-bottom: 99px;

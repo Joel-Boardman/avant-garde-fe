@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const HeaderSection = styled.header`
-  background-color: #000;
+export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
+  background-color: ${(props) => (props.defaultHeader ? "#000" : "#F4F4F4")};
   padding: 39px;
   position: fixed;
   width: 100%;
@@ -32,7 +32,10 @@ export const HeaderSection = styled.header`
       letter-spacing: 0.05em;
       margin: 0 16px;
       color: rgba(255, 255, 255, 0.85);
-      background: linear-gradient(to right, #fbd71f, #fbd71f 50%, #fff 50%);
+      background: ${(props) =>
+        props.defaultHeader
+          ? "linear-gradient(to right, #fbd71f, #fbd71f 50%, #fff 50%)"
+          : "linear-gradient(to right, #fbd71f, #fbd71f 50%, #000 50%)"};
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

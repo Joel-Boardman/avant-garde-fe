@@ -1,8 +1,24 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  background-color: grey;
-  padding: 80px 0;
+  background-color: transparent;
+  padding: 120px 0;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+
+  video {
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -10;
+  }
+
   .content {
     max-width: 900px;
 
