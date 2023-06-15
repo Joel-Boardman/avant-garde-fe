@@ -4,6 +4,7 @@ import { GlobalStyle } from "./global/Theme";
 
 // Layout
 import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 
 // Pages
 import LandingPage from "./pages/LandingPage";
@@ -17,6 +18,7 @@ const Router: React.FC = () => {
         <Route path="/" Component={LandingPage} />
         <Route path="/contact" Component={ContactPage} />
       </Routes>
+      <Footer />
       <GlobalStyle />
     </>
   );
