@@ -9,6 +9,7 @@ import Footer from "./layout/Footer";
 // Pages
 import LandingPage from "./pages/LandingPage";
 import ContactPage from "./pages/ContactPage";
+import InvestPage from "./pages/InvestPage";
 
 const Router: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Router: React.FC = () => {
       <Routes>
         <Route path="/" Component={LandingPage} />
         <Route path="/contact" Component={ContactPage} />
+        <Route path="/invest" Component={InvestPage} />
       </Routes>
       <Footer />
       <GlobalStyle />

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     <HeaderSection>
       <img src={LogoSVG} alt="logo" />
       <div className="links">
-        <Link to="/contact">Investments</Link>
+        <Link to="/invest">Investments</Link>
         <Link to="/contact">Enquire Now</Link>
       </div>
     </HeaderSection>
