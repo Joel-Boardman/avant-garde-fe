@@ -23,7 +23,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
       justify-content: space-between;
       padding-bottom: 5px;
       position: relative;
-
+      margin-bottom: 30px;
       &:before,
       &:after {
         height: 100%;
@@ -70,6 +70,103 @@ export const Content = styled.div<{ arrayIndex: number }>`
     &__left {
       margin-top: 96px;
       max-width: 633px;
+      position: relative;
+      z-index: 10;
+
+      &.watch-info {
+        width: 43%;
+        margin-right: 50px;
+      }
+    }
+
+    &__right {
+      position: relative;
+      width: 100%;
+
+      .right-img {
+        position: absolute;
+        right: -20%;
+        z-index: 0;
+      }
+
+      .right-img-two {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+
+      .watch-carousel {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        position: absolute;
+        width: 933px;
+
+        > .watchItem {
+          min-width: 450px;
+          display: block;
+
+          margin: 0 10px;
+
+          > div {
+            background: #0c0c0c;
+            padding: 50px;
+            transition: 0.5s;
+
+            img {
+              margin: 0 auto;
+              display: block;
+              height: 420px;
+            }
+          }
+
+          p {
+            opacity: 0;
+            color: white;
+            font-family: "casanova";
+            font-size: 22px;
+            font-weight: 400;
+            margin-top: 20px;
+            transition: 0.5s;
+
+            &:after {
+              content: "";
+              position: absolute;
+              right: 0;
+              height: 100%;
+              width: 100%;
+              z-index: 5;
+              background: black;
+            }
+          }
+
+          &:hover {
+            > div {
+              transition: 0.5s;
+              background: transparent;
+            }
+            p {
+              opacity: 1;
+              position: relative;
+              z-index: 4;
+              transition: 0.5s;
+
+              &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 0%;
+                z-index: 5;
+                background: black;
+                transition: 2s;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

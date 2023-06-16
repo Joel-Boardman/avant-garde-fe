@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
 
+// Images
+import WatchImg from "../../assets/background/watch-img.png";
+import WatchTwoImg from "../../assets/background/watch-img-2.png";
+import watchPngOne from "../../assets/images/av-watch-1.png";
+import watchPngTwo from "../../assets/images/av-watch-2.png";
+import watchPngThree from "../../assets/images/av-watch-3.png";
+import watchPngFour from "../../assets/images/av-watch-4.png";
+import watchPngFive from "../../assets/images/av-watch-5.png";
+
 // Styles
 import { Section, Content } from "./styles";
 
@@ -26,6 +35,11 @@ const Purchasing: React.FC = () => {
           </p>
         </div>
       ),
+      right: [
+        <>
+          <img src={WatchImg} alt="Watch" className="right-img" />
+        </>,
+      ],
     },
     {
       content: (
@@ -46,11 +60,19 @@ const Purchasing: React.FC = () => {
           </p>
         </div>
       ),
+      right: [
+        <>
+          <img src={WatchTwoImg} alt="Watch" className="right-img-two" />
+        </>,
+      ],
     },
     {
       content: (
-        <div>
-          <h3>Only The Finest Options For You</h3>
+        <div className="watch-info">
+          <h3>
+            Only The Finest <br />
+            Options For You
+          </h3>
           <br />
           <p>
             {" "}
@@ -61,6 +83,43 @@ const Purchasing: React.FC = () => {
           </p>
         </div>
       ),
+      right: [
+        <div className="watch-carousel">
+          <div className="watchItem">
+            <div>
+              <img src={watchPngOne} alt="" />
+            </div>
+            <p>Audemars Piguet Skeleton</p>
+          </div>
+
+          <div className="watchItem">
+            <div>
+              <img src={watchPngTwo} alt="" />
+            </div>
+            <p>Patek Philippe 5980R</p>
+          </div>
+
+          <div className="watchItem">
+            <div>
+              <img src={watchPngThree} alt="" />
+            </div>
+            <p>Patek Philippe 5711R</p>
+          </div>
+          <div className="watchItem">
+            <div>
+              <img src={watchPngFour} alt="" />
+            </div>
+            <p>Rolex Daytona</p>
+          </div>
+
+          <div className="watchItem">
+            <div>
+              <img src={watchPngFive} alt="" />
+            </div>
+            <p>Rolex Batgirl</p>
+          </div>
+        </div>,
+      ],
     },
   ];
 
@@ -87,10 +146,16 @@ const Purchasing: React.FC = () => {
             </div>
           </div>
           <div className="info">
-            <div className={`info__left ${animation}`}>
+            <div
+              className={`info__left ${animation} ${
+                arrayIndex === 2 ? "watch-info" : ""
+              }`}
+            >
               {infoArray[arrayIndex].content}
             </div>
-            <div className="info__right"></div>
+            <div className={`info__right ${animation}`}>
+              {infoArray[arrayIndex].right}
+            </div>
           </div>
         </Content>
       </div>
