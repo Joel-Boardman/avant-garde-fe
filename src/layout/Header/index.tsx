@@ -14,6 +14,7 @@ const Header: React.FC = () => {
   const [defaultHeader, setDefaultHeader] = useState<boolean>(true);
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     if (location.pathname !== "/") {
       setDefaultHeader(false);
     } else {

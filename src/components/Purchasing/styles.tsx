@@ -130,7 +130,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
             font-weight: 400;
             margin-top: 20px;
             transition: 0.5s;
-
+            position: relative;
             &:after {
               content: "";
               position: absolute;
