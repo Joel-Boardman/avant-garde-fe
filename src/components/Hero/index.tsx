@@ -9,7 +9,7 @@ import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
 
 // Styles
-import { Section, Content } from "./styles";
+import { Section, Content, Button } from "./styles";
 
 // Components
 import HeroAnimation from "../HeroAnimation";
@@ -38,6 +38,10 @@ const Hero: React.FC = () => {
             to truly remark at. Enquire with us today to discover the
             availability of this particular model.
           </p>
+          <br />
+          <Button>
+            <span>Enquire Now</span>
+          </Button>
         </>
       ),
     },
@@ -61,6 +65,10 @@ const Hero: React.FC = () => {
             environment, the 5980R is a truly excellent choice for those seeking
             a premier option. 
           </p>
+          <br />
+          <Button>
+            <span>Enquire Now</span>
+          </Button>
         </>
       ),
     },
@@ -88,6 +96,10 @@ const Hero: React.FC = () => {
             with us today to see how you can add this beautiful watch to your
             collection.
           </p>
+          <br />
+          <Button>
+            <span>Enquire Now</span>
+          </Button>
         </>
       ),
     },
@@ -110,6 +122,10 @@ const Hero: React.FC = () => {
             that sometimes only a Rolex can provide you. Enquire with us today
             to discover the availability of this particular model.
           </p>
+          <br />
+          <Button>
+            <span>Enquire Now</span>
+          </Button>
         </>
       ),
     },
@@ -133,6 +149,10 @@ const Hero: React.FC = () => {
             Enquire with us today to explore how you can make ‘The Batgirl’ your
             next watch purchase. 
           </p>
+          <br />
+          <Button>
+            <span>Enquire Now</span>
+          </Button>
         </>
       ),
     },
@@ -164,6 +184,9 @@ const Hero: React.FC = () => {
               setArrayIndex(i);
             }}
           />
+          <p>
+            {watchInfo[i].title} {watchInfo[i].type}
+          </p>
         </a>
       );
     },

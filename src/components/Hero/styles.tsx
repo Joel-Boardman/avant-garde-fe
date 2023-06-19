@@ -24,7 +24,7 @@ export const Content = styled.div`
   }
 
   .watch-scroll {
-    width: 40%;
+    width: 45%;
   }
 
   .watch-info {
@@ -98,7 +98,7 @@ export const Content = styled.div`
       display: flex !important;
       flex-direction: column !important;
       top: 0%;
-      left: 100%;
+      left: calc(100% - 70px);
 
       li {
         height: auto !important;
@@ -109,8 +109,34 @@ export const Content = styled.div`
         &:hover {
           opacity: 1;
           transition: 0.2s;
+
+          p {
+            transition: 0.5s;
+            opacity: 1;
+          }
+        }
+
+        p {
+          position: absolute;
+          top: 50%;
+          right: -125px;
+          text-align: left;
+          width: 70px;
+          font-family: "casanova";
+          transform: translateY(-50%);
+
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          /* identical to box height */
+
+          color: rgba(255, 255, 255, 0.7);
+          opacity: 0;
+          transition: 0.5s;
         }
       }
+
       .slick-active {
         opacity: 1;
       }
@@ -146,6 +172,72 @@ export const Content = styled.div`
           }
         }
       }
+    }
+  }
+`;
+
+export const Button = styled.button`
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: "area-extended";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  padding: 14px 58px;
+  text-align: center;
+
+  color: #ffffff;
+  background: transparent;
+  transition: 300ms;
+  position: relative;
+  z-index: 2;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 1px solid #ffffff;
+
+    z-index: -1;
+    transition: 400ms;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.85);
+    background: linear-gradient(
+      to right,
+      #fff,
+      #fff 50%,
+      rgba(95, 81, 13, 1) 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 0%;
+  }
+
+  span {
+    /* Same as before */
+    transition: background-position 275ms ease;
+  }
+
+  &:hover {
+    span {
+      background-position: 100%;
+    }
+    &:before {
+      -moz-transform: scaleY(-1);
+      -o-transform: scaleY(-1);
+      -webkit-transform: scaleY(-1);
+      transform: scaleY(-1);
+      background: rgba(251, 215, 31, 1) !important;
     }
   }
 `;
