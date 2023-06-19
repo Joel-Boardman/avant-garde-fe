@@ -7,7 +7,7 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   width: 100%;
   top: 0;
   z-index: 500;
-
+  max-height: 98px;
   > img {
     width: 245px;
     height: auto;

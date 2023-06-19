@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0 auto;
     padding: 0 4.6rem;
+    min-height: inherit;
   }
 
 

@@ -3,15 +3,15 @@ import React from "react";
 // Styles
 import { Section } from "./styles";
 
+// Components
+import HeroAnimation from "../HeroAnimation";
+
 const Hero: React.FC = () => {
   return (
     <Section>
-      <h1>TO BE DONE</h1>
-      <h1>TO BE DONE</h1>
-      <h1>TO BE DONE</h1>
-      <h1>TO BE DONE</h1>
-      <h1>TO BE DONE</h1>
-      <h1>TO BE DONE</h1>
+      <div className="border">
+        <HeroAnimation />
+      </div>
     </Section>
   );
 };
