@@ -1,86 +1,14 @@
 import styled, { keyframes } from "styled-components";
-
-const shrink = keyframes`
-    100% {
-      width:90%;
-      top: 40%;
-    }
-`;
-
-const shrinkTicker = keyframes`
-    100%{
-      height: 360px;
-      width: 21px;
-      top: 31%;
-      left: 51%;
-    }
-`;
-
-const rotateTicker = keyframes`
-  0%{
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100%{
-    transform: translate(-50%, -50%) rotate(31deg);
-  }
-`;
-
-const expand = keyframes`
-    100%{
-        width: 709px;
-        top: 35%;
-
-    }
-`;
-
-const fadeToTop = keyframes`
-  80%{
-    position: absolute;
-    width: 709px;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  100%{
-    top: 0;
-    opacity: 0;
-    width: 200px;
-  }
-`;
-
-const fadeToBottom = keyframes`
-  80%{
-    width:90%;
-    top: 40%;
-    opacity: 1;
-  }
-  100%{
-    top: 80%;
-    opacity: 0;
-    width:90%;
-  }
-`;
-
-const fadeToBottomTicker = keyframes`
-  80%{
-    transform: translate(-50%, -50%) rotate(31deg);
-    height: 360px;
-      width: 21px;
-      top: 31%;
-      left: 51%;
-    opacity: 1;
-  }
-  100%{
-    bottom: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(31deg);
-    height: 360px;
-    width: 21px;
-    top: 71%;
-    left: 51%;
-  }
-`;
+import {
+  shrink,
+  shrinkTicker,
+  rotateTicker,
+  expand,
+  fadeToTop,
+  fadeToBottom,
+  fadeToBottomTicker,
+  fadeBg,
+} from "./animations";
 
 export const Section = styled.div`
   position: relative;
@@ -127,8 +55,8 @@ export const Section = styled.div`
 export const Content = styled.div`
   background: linear-gradient(
     173.1deg,
-    rgba(0, 0, 0, 0.96) 12.9%,
-    rgba(0, 0, 0, 0.72) 35.46%,
+    rgba(0, 0, 0, 0.66) 12.9%,
+    rgba(0, 0, 0, 0.42) 35.46%,
     #000000 67.85%
   );
   height: 100%;
@@ -137,15 +65,66 @@ export const Content = styled.div`
   position: relative;
   width: 100%;
   min-height: inherit;
+  z-index: 90;
 
-  > img {
+  &:after {
+    content: "";
     position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: 1s linear 2s forwards 1 ${expand},
-      5s ease-in 1s forwards 1 ${fadeToTop};
-    animation-delay: 1s;
-    width: 394px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      173.1deg,
+      rgba(0, 0, 0, 0.96) 12.9%,
+      rgba(0, 0, 0, 0.72) 35.46%,
+      #000000 67.85%
+    );
+    z-index: 10;
+    animation: 1s linear 1s forwards 1 ${fadeBg};
+  }
+
+  .animation-one {
+    > img {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: 1s linear 2s forwards 1 ${expand},
+        5s ease-in 1s forwards 1 ${fadeToTop};
+      animation-delay: 1s;
+      width: 394px;
+      z-index: 50;
+    }
+  }
+
+  .animation-two {
+    > img {
+      position: absolute;
+
+      &:nth-of-type(1) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 343px;
+        z-index: 20;
+      }
+
+      &:nth-of-type(2) {
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        width: 272px;
+        z-index: 15;
+      }
+
+      &:nth-of-type(3) {
+        top: 50%;
+        left: 64%;
+        transform: translate(-50%, -50%);
+        width: 272px;
+        z-index: 15;
+      }
+    }
   }
 `;
