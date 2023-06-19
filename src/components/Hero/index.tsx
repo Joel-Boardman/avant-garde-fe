@@ -205,7 +205,7 @@ const Hero: React.FC = () => {
   return (
     <Section>
       <div className="border">
-        {/* <HeroAnimation /> */}
+        <HeroAnimation />
         <Content>
           <div className="watch-info">
             <div className={`title ${animation}`}>

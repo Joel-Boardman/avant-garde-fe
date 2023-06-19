@@ -93,8 +93,7 @@ export const fadeBg = keyframes`
 export const fadeInWatch = keyframes`
   100%{
     opacity: 1;
-    width: 343px;
-
+    width: 326px;
   }
 `;
 
@@ -124,3 +123,22 @@ export const fadeOutSecondary = keyframes`
     opacity: 0;
   }
 `;
+
+export const moveAndFade = keyframes`
+  50%{
+    top: 48.5%;
+    left: 67.3%;
+    opacity: 1;
+  }
+  95%{
+    top: 48.5%;
+    left: 67.3%;
+    opacity: 1;
+  }
+
+  100%{
+    top: 48.5%;
+    left: 67.3%;
+    opacity: 0;
+  }
+    `;

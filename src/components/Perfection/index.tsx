@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 // Video
 import WatchVideo from "../../assets/videos/watch.mp4";
@@ -7,8 +8,15 @@ import WatchVideo from "../../assets/videos/watch.mp4";
 import { Section } from "./styles";
 
 const Perfection: React.FC = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    console.log("Logging to console: ", inView);
+  }, [inView]);
   return (
-    <Section>
+    <Section ref={ref}>
       <video autoPlay muted loop>
         <source src={WatchVideo} type="video/mp4" />
         Your browser does not support the video tag.

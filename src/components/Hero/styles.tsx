@@ -5,19 +5,28 @@ const fadeIn = keyframes`
   100% {opacity: 1;}
 `;
 
+const fadeInSection = keyframes`
+  0% {opacity: 0;}
+  90%{
+    opacity: 0;
+  }
+  100% {opacity: 1;}
+`;
+
 export const Section = styled.section`
   background: black;
   min-height: 750px;
-  height: 750px;
-  margin-top: 95px;
+  padding-top: 95px;
   color: white;
+  position: relative;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 80px 0;
+  padding: 80px 0 120px;
+  animation: 10s linear 0s forwards ${fadeInSection};
 
   .watch-info {
     width: 50%;
@@ -160,10 +169,14 @@ export const Content = styled.div`
         width: 376px !important;
         height: 540px !important;
         overflow: visible !important;
+
+        > div {
+          display: flex;
+        }
         .watch-img {
           margin: 12px auto;
           width: 326px !important;
-          height: 515px !important;
+          height: auto !important;
           transition: 0.2s;
 
           &:hover {

@@ -12,7 +12,18 @@ import {
   fadeInWatchSecondary,
   pulseWatchSecondary,
   fadeOutSecondary,
+  moveAndFade,
 } from "./animations";
+
+export const AnimationWrapper = styled.div`
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
 
 export const Section = styled.div`
   position: relative;
@@ -113,7 +124,8 @@ export const Content = styled.div`
         transform: translate(-50%, -50%);
         width: 143px;
         z-index: 20;
-        animation: 0.5s linear 5.5s forwards ${fadeInWatch};
+        animation: 0.5s linear 5.5s forwards ${fadeInWatch},
+          1.2s ease-out 8.5s forwards ${moveAndFade};
       }
 
       &:nth-of-type(2) {
