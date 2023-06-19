@@ -84,12 +84,43 @@ export const fadeToBottomTicker = keyframes`
 
 export const fadeBg = keyframes`
     100%{
-          /* background: linear-gradient(
-    173.1deg,
-    rgba(0, 0, 0, 0.76) 12.9%,
-    rgba(0, 0, 0, 0.52) 35.46%,
-    #000000 67.85%
-  ); */
+
   opacity: 0;
     }
+`;
+
+// Watches Animations
+export const fadeInWatch = keyframes`
+  100%{
+    opacity: 1;
+    width: 343px;
+
+  }
+`;
+
+export const fadeInWatchSecondary = keyframes`
+  0%{
+    width: 172px;
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+    width: 272px;
+  }
+`;
+
+export const pulseWatchSecondary = keyframes`
+  30%{
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+  100%{
+    transform: translate(-50%, -50%) scale(1);
+  }
+`;
+
+export const fadeOutSecondary = keyframes`
+  100%{
+    opacity: 0;
+  }
 `;

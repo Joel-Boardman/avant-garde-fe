@@ -8,6 +8,10 @@ import {
   fadeToBottom,
   fadeToBottomTicker,
   fadeBg,
+  fadeInWatch,
+  fadeInWatchSecondary,
+  pulseWatchSecondary,
+  fadeOutSecondary,
 } from "./animations";
 
 export const Section = styled.div`
@@ -101,13 +105,15 @@ export const Content = styled.div`
   .animation-two {
     > img {
       position: absolute;
+      opacity: 0;
 
       &:nth-of-type(1) {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 343px;
+        width: 143px;
         z-index: 20;
+        animation: 0.5s linear 5.5s forwards ${fadeInWatch};
       }
 
       &:nth-of-type(2) {
@@ -116,6 +122,9 @@ export const Content = styled.div`
         transform: translate(-50%, -50%);
         width: 272px;
         z-index: 15;
+        animation: 0.45s linear 6.5s forwards ${fadeInWatchSecondary},
+          0.2s linear 7s forwards ${pulseWatchSecondary},
+          0.2s linear 8s forwards ${fadeOutSecondary};
       }
 
       &:nth-of-type(3) {
@@ -124,6 +133,9 @@ export const Content = styled.div`
         transform: translate(-50%, -50%);
         width: 272px;
         z-index: 15;
+        animation: 0.45s linear 6.5s forwards ${fadeInWatchSecondary},
+          0.2s linear 7s forwards ${pulseWatchSecondary},
+          0.2s linear 8s forwards ${fadeOutSecondary};
       }
     }
   }
