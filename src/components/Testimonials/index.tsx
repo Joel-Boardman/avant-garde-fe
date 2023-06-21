@@ -26,18 +26,18 @@ const Hero: React.FC = () => {
             </p>
           </div>
         </Content>
+        <TestContainer>
+          {testimonialData.map((obj, i) => {
+            return (
+              <div className="card">
+                <h4>{obj.title}</h4>
+                <p>{obj.body}</p>
+                <p>{obj.name}</p>
+              </div>
+            );
+          })}
+        </TestContainer>
       </div>
-      <TestContainer>
-        {testimonialData.map((obj, i) => {
-          return (
-            <div className="card">
-              <h4>{obj.title}</h4>
-              <p>{obj.body}</p>
-              <p>{obj.name}</p>
-            </div>
-          );
-        })}
-      </TestContainer>
     </Section>
   );
 };

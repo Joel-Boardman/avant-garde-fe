@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 // Video
@@ -8,12 +8,18 @@ import WatchVideo from "../../assets/videos/watch.mp4";
 import { Section } from "./styles";
 
 const Perfection: React.FC = () => {
+  const [animation, setAnimation] = useState<string>("");
+
   const { ref, inView, entry } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
   });
 
   useEffect(() => {
-    console.log("Logging to console: ", inView);
+    if (inView) {
+      setAnimation("fadeIn");
+    } else {
+      setAnimation("");
+    }
   }, [inView]);
   return (
     <Section ref={ref}>
@@ -22,7 +28,7 @@ const Perfection: React.FC = () => {
         Your browser does not support the video tag.
       </video>
       <div className="border">
-        <div className="content">
+        <div className={`content ${animation}`}>
           <h2>Purveyors Of Perfection</h2>
           <p>
             Ensure you're always looking and feeling your absolute finest,

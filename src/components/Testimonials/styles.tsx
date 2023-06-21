@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const Section = styled.section`
   padding: 95px 0px 79px;
   background: white;
+  min-height: 800px;
   .border {
     padding: 0 11rem;
+    position: relative;
   }
 `;
 
@@ -21,7 +23,12 @@ export const TestContainer = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  margin-left: 11rem;
+  margin-left: 8rem;
+  position: absolute;
+  left: 0;
+  top: 250px;
+  max-width: 93%;
+
   &::-webkit-scrollbar {
     display: none;
   }
