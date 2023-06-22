@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { devices } from "../../layout/devices";
 
 const shrink = keyframes`
   100% {
@@ -19,13 +20,13 @@ const grow = keyframes`
 const fadeInLeft = keyframes`
  
   80% {
-    left: 150px;
+    left: 20%;
     transform: translate(-50%, -50%) scale(1);
 
   }
 
   100% {
-    left: 150px;
+    left: 20%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
@@ -33,13 +34,13 @@ const fadeInLeft = keyframes`
 
 const fadeInRight = keyframes`
   80% {
-    left: calc(50% + 150px);
+    left: 80%;
     transform: translate(-50%, -50%) scale(1);
 
   }
 
   100% {
-    left: calc(50% + 150px);
+    left: 80%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
@@ -47,7 +48,7 @@ const fadeInRight = keyframes`
 
 const fadeOutLeft = keyframes`
   0% {
-    left: 150px;
+    left: 20%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
@@ -66,7 +67,7 @@ const fadeOutLeft = keyframes`
 
 const fadeOutRight = keyframes`
   0%{
-    left: calc(50% + 150px);
+    left: 80%;
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
   }
@@ -86,6 +87,10 @@ const fadeOutRight = keyframes`
 export const Section = styled.section`
   padding: 160px 0;
   background: white;
+
+  @media ${devices.laptopS} {
+    padding: 80px 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -182,6 +187,36 @@ export const Content = styled.div`
         animation-name: ${fadeOutRight};
         animation-duration: 1s;
         animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .info-container {
+      width: 49%;
+      margin: 0;
+
+      h2 {
+        font-size: 44px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .ani-container {
+      position: relative;
+      width: 46%;
+      > img {
+        &:nth-last-of-type(1) {
+          width: 200px;
+        }
+        &:nth-last-of-type(2) {
+          width: 300px;
+        }
+        &:nth-last-of-type(3) {
+          width: 200px;
+        }
       }
     }
   }

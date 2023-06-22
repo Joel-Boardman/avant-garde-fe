@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { devices } from "../../layout/devices";
 
 const fadeIn = keyframes`
   0% {opacity: 0;}
@@ -7,6 +8,10 @@ const fadeIn = keyframes`
 export const Section = styled.section`
   padding: 70px 0 160px 0;
   background: #000;
+
+  @media ${devices.laptopS} {
+    padding: 70px 0px;
+  }
 `;
 
 export const Content = styled.div<{ arrayIndex: number }>`
@@ -165,6 +170,67 @@ export const Content = styled.div<{ arrayIndex: number }>`
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .options {
+      &__container {
+        display: block;
+        width: 355px;
+        button {
+          font-size: 13px;
+          margin-right: 22px;
+        }
+        &:after {
+          content: "";
+          border-bottom: 1px solid #fff;
+          width: ${(props) => (Number(props.arrayIndex) + 1) * 80 + "px"};
+          transition: 0.5s;
+          z-index: 2;
+        }
+      }
+    }
+    .info {
+      &__left {
+        margin-top: 50px;
+        width: 100%;
+        &.watch-info {
+          width: 50%;
+        }
+
+        h3 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+
+      &__right {
+        .watch-carousel {
+          /* width: 618px; */
+          width: calc(100% + 2.8rem);
+
+          > .watchItem {
+            min-width: 400px;
+            > div {
+              img {
+                height: 354px;
+              }
+            }
+          }
+        }
+
+        .right-img {
+          width: 590px;
+        }
+
+        .right-img-two {
+          width: 270px;
+          top: 37%;
         }
       }
     }

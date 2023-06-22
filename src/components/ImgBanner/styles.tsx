@@ -10,4 +10,8 @@ export const Banner = styled.div`
   flex-direction: row;
   justify-content: center;
   background: white;
+
+  > img {
+    width: 25%;
+  }
 `;

@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { devices } from "../../layout/devices";
 
 const fadeIn = keyframes`
   0% {opacity: 0;}
@@ -184,6 +185,49 @@ export const Content = styled.div`
             transition: 0.5s;
           }
         }
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .watch-info {
+      width: 45%;
+
+      .title {
+        h1 {
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+      .info {
+        p {
+          font-size: 13px;
+          line-height: 25px;
+        }
+      }
+    }
+    .watch-scroll {
+      width: 55%;
+      .slick-dots {
+        left: calc(100% - 40px);
+
+        li {
+          p {
+            font-size: 12px;
+            line-height: 16px;
+            right: -115px;
+          }
+        }
+      }
+      &__slide {
+        .slick-slide {
+          .watch-img {
+            width: 280px !important;
+          }
+        }
+      }
+      .pagination-img {
+        width: 50px;
       }
     }
   }

@@ -13,6 +13,7 @@ import {
   pulseWatchSecondary,
   fadeOutSecondary,
   moveAndFade,
+  removeEntirely,
 } from "./animations";
 
 export const AnimationWrapper = styled.div`
@@ -21,7 +22,7 @@ export const AnimationWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
+  height: 90%;
   overflow: hidden;
 `;
 

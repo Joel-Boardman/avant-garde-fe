@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -40,6 +41,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0 4.6rem;
     min-height: inherit;
+
+    @media ${devices.laptopS}{
+      padding: 0 2.6rem;
+
+    }
   }
 
 

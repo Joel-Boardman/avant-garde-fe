@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
   padding: 140px 0;
@@ -47,6 +48,31 @@ export const Section = styled.section`
         position: absolute;
         top: 0;
         left: 0;
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .info {
+      h2 {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .row {
+      .item {
+        max-width: 285px;
+        padding-left: 40px;
+        h4 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 14px;
+        }
       }
     }
   }

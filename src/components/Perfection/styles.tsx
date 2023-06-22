@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { devices } from "../../layout/devices";
 
 const fadeIn = keyframes`
   0%{
@@ -49,6 +50,20 @@ export const Section = styled.section`
       color: #fff;
       font-size: 20px;
       font-weight: 400;
+    }
+  }
+
+  @media ${devices.laptopS} {
+    padding: 80px 0px;
+
+    .content {
+      h2 {
+        font-size: 54px;
+      }
+
+      p {
+        font-size: 18px;
+      }
     }
   }
 `;

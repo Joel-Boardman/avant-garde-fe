@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
-  padding: 129px 0 200px;
+  padding: 160px 0px 200px;
+
+  @media ${devices.laptopS} {
+    padding: 160px 0px 150px;
+  }
 `;
 
 export const Content = styled.div`
@@ -145,6 +150,23 @@ export const Content = styled.div`
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .content__top {
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    .content__bottom {
+      max-width: 804px;
+      &--quad {
+        > input {
+          max-width: 395px;
+        }
       }
     }
   }

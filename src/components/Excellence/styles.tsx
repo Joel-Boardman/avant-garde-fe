@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
   padding: 160px 0 100px;
   background: white;
+
+  @media ${devices.laptopS} {
+    padding: 80px 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -52,6 +57,32 @@ export const Content = styled.div`
           position: absolute;
           top: 0;
           left: -15px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .banner-info {
+      h2 {
+        width: 100%;
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .quad-info {
+      &__container {
+        justify-content: flex-end;
+        margin-top: 50px;
+        &--item {
+          margin: 25px;
+          p {
+            font-size: 14px;
+          }
         }
       }
     }

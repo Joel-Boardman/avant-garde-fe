@@ -1,12 +1,22 @@
 import styled from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
   padding: 95px 0px 79px;
   background: white;
   min-height: 800px;
+
   .border {
     padding: 0 11rem;
     position: relative;
+  }
+
+  @media ${devices.laptopS} {
+    padding: 80px 0px 70px;
+
+    .border {
+      padding: 0 9rem;
+    }
   }
 `;
 
@@ -16,6 +26,12 @@ export const Content = styled.div`
   }
   .info {
     margin-bottom: 125px;
+  }
+
+  @media ${devices.laptopS} {
+    h2 {
+      font-size: 40px;
+    }
   }
 `;
 

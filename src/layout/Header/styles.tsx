@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../devices";
 
 export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   background-color: ${(props) => (props.defaultHeader ? "#000" : "#F4F4F4")};
@@ -8,6 +9,7 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   top: 0;
   z-index: 500;
   max-height: 98px;
+
   > img {
     width: 245px;
     height: auto;
@@ -49,6 +51,22 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
     }
     a:hover {
       background-position: 0 100%;
+    }
+  }
+
+  @media ${devices.tabletL} {
+    .links {
+      > a {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  @media ${devices.tablet} {
+    padding: 39px 15px;
+    > img {
+      width: 200px;
     }
   }
 `;

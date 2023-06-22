@@ -142,3 +142,9 @@ export const moveAndFade = keyframes`
     opacity: 0;
   }
     `;
+
+export const removeEntirely = keyframes`
+  100%{
+    display: none;
+  }
+`;
