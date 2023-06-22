@@ -235,4 +235,35 @@ export const Content = styled.div<{ arrayIndex: number }>`
       }
     }
   }
+
+  @media ${devices.tabletL} {
+    .info {
+      &__left {
+        width: 155%;
+        margin-top: 30px;
+        p {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+      &__right {
+        .watch-carousel {
+          > .watchItem {
+            min-width: 300px;
+            > div {
+              padding: 30px;
+            }
+          }
+        }
+        .right-img {
+          width: 100%;
+          right: -16%;
+        }
+
+        .right-img-two {
+          left: 90%;
+          width: 90%;
+        }
+      }
+    }
+  }
 `;

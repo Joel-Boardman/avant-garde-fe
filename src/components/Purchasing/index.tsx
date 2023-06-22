@@ -9,12 +9,29 @@ import watchPngThree from "../../assets/images/av-watch-3.png";
 import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
 
+import WatchOneImgMobile from "../../assets/images/purchase-watch-one.png";
+import WatchTwoImgMobile from "../../assets/images/trusted-img.png";
+
 // Styles
 import { Section, Content } from "./styles";
 
 const Purchasing: React.FC = () => {
   const [arrayIndex, setArrayIndex] = useState<number>(0);
   const [animation, setAnimation] = useState<string>("");
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
 
   const infoArray = [
     {
@@ -37,7 +54,11 @@ const Purchasing: React.FC = () => {
       ),
       right: [
         <>
-          <img src={WatchImg} alt="Watch" className="right-img" />
+          <img
+            src={windowWidth > 960 ? WatchImg : WatchOneImgMobile}
+            alt="Watch"
+            className="right-img"
+          />
         </>,
       ],
     },
@@ -62,7 +83,11 @@ const Purchasing: React.FC = () => {
       ),
       right: [
         <>
-          <img src={WatchTwoImg} alt="Watch" className="right-img-two" />
+          <img
+            src={windowWidth > 960 ? WatchTwoImg : WatchTwoImgMobile}
+            alt="Watch"
+            className="right-img-two"
+          />
         </>,
       ],
     },
