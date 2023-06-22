@@ -1,4 +1,7 @@
 import styled, { keyframes } from "styled-components";
+import TrustImg from "../../assets/images/trusted-img.png";
+
+// Devices
 import { devices } from "../../layout/devices";
 
 const shrink = keyframes`
@@ -90,6 +93,10 @@ export const Section = styled.section`
 
   @media ${devices.laptopS} {
     padding: 80px 0;
+  }
+
+  @media ${devices.tabletL} {
+    padding: 86px 0 50px;
   }
 `;
 
@@ -197,7 +204,7 @@ export const Content = styled.div`
       margin: 0;
 
       h2 {
-        font-size: 44px;
+        font-size: 40px;
       }
       p {
         font-size: 14px;
@@ -217,6 +224,31 @@ export const Content = styled.div`
         &:nth-last-of-type(3) {
           width: 200px;
         }
+      }
+    }
+  }
+
+  @media ${devices.tabletL} {
+    align-items: flex-start;
+
+    .ani-container {
+      background-image: url(${TrustImg});
+      background-position: 0px 0px;
+      width: 30%;
+      height: 229px;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      > img {
+        display: none !important;
+      }
+    }
+
+    .info-container {
+      width: 70%;
+
+      p {
+        color: rgba(0, 0, 0, 0.6);
       }
     }
   }

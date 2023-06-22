@@ -56,6 +56,8 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
 
   @media ${devices.tabletL} {
     .links {
+      display: none;
+
       > a {
         font-size: 16px;
         margin: 0 10px;

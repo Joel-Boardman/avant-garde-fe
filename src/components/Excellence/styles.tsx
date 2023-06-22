@@ -8,6 +8,10 @@ export const Section = styled.section`
   @media ${devices.laptopS} {
     padding: 80px 0;
   }
+
+  @media ${devices.tabletL} {
+    padding: 50px 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -82,6 +86,35 @@ export const Content = styled.div`
           margin: 25px;
           p {
             font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.tabletL} {
+    .banner-info {
+      p {
+        display: none;
+      }
+    }
+
+    .quad-info {
+      &__container {
+        justify-content: center;
+
+        &--item {
+          width: 340px;
+
+          img {
+            top: 5px;
+          }
+          h3 {
+            color: rgba(50, 43, 5, 0.75);
+          }
+
+          p {
+            color: rgba(0, 0, 0, 0.7);
           }
         }
       }

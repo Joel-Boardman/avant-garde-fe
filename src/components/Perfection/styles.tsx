@@ -66,4 +66,15 @@ export const Section = styled.section`
       }
     }
   }
+
+  @media ${devices.tabletL} {
+    background: rgba(0, 0, 0, 0.8);
+    .content {
+      h2 {
+        color: white;
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+    }
+  }
 `;
