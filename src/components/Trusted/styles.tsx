@@ -252,4 +252,22 @@ export const Content = styled.div`
       }
     }
   }
+
+  @media ${devices.mobileL} {
+    .info-container {
+      width: 65%;
+
+      h2 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .ani-container {
+    width: 26%;
+  }
 `;

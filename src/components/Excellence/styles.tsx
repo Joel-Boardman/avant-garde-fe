@@ -120,4 +120,33 @@ export const Content = styled.div`
       }
     }
   }
+
+  @media ${devices.mobileL} {
+    .banner-info {
+      h2 {
+        font-size: 25px;
+        max-width: 200px;
+      }
+    }
+
+    .quad-info {
+      &__container {
+        margin-top: 30px;
+
+        &--item {
+          max-width: 240px;
+
+          h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 25px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
 `;

@@ -44,7 +44,10 @@ export const GlobalStyle = createGlobalStyle`
 
     @media ${devices.laptopS}{
       padding: 0 2.6rem;
+    }
 
+    @media ${devices.tabletS}{
+      padding: 0 1.6rem;
     }
   }
 

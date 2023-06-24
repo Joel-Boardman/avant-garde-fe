@@ -165,12 +165,27 @@ const Purchasing: React.FC = () => {
         <Content arrayIndex={arrayIndex}>
           <div className="options">
             <div className="options__container">
-              <button onClick={() => handleSelect(0)}>Purchase</button>
-              <button onClick={() => handleSelect(1)}>Selling</button>
-              <button onClick={() => handleSelect(2)}>Available Watches</button>
+              <button
+                onClick={() => handleSelect(0)}
+                className={`${arrayIndex === 0 ? "selected" : ""}`}
+              >
+                Purchase
+              </button>
+              <button
+                onClick={() => handleSelect(1)}
+                className={`${arrayIndex === 1 ? "selected" : ""}`}
+              >
+                Selling
+              </button>
+              <button
+                onClick={() => handleSelect(2)}
+                className={`${arrayIndex === 2 ? "selected" : ""}`}
+              >
+                Available Watches
+              </button>
             </div>
           </div>
-          <div className="info">
+          <div className={`info ${arrayIndex === 2 ? "mobile-col" : ""}`}>
             <div
               className={`info__left ${animation} ${
                 arrayIndex === 2 ? "watch-info" : ""

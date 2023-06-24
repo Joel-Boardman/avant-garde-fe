@@ -67,11 +67,85 @@ export const Section = styled.section`
       .item {
         max-width: 285px;
         padding-left: 40px;
+
         h4 {
           font-size: 18px;
         }
         p {
           font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.tabletL} {
+    padding: 70px 0 80px;
+  }
+
+  @media ${devices.tablet} {
+    .info {
+      h2 {
+        text-align: left;
+        max-width: 350px;
+      }
+      p {
+        display: none;
+      }
+    }
+
+    .row {
+      flex-direction: column;
+      align-items: center;
+
+      .item {
+        margin-bottom: 50px;
+        max-width: 392px;
+
+        h4 {
+          margin-bottom: 22px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    padding: 60px 0px 10px;
+    .info {
+      margin-bottom: 40px;
+      h2 {
+        font-size: 25px;
+        max-width: 200px;
+      }
+    }
+
+    .row {
+      .item {
+        h4 {
+          font-size: 14px;
+          color: rgba(50, 43, 5, 1);
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        img {
+          top: -2px;
+          left: -10px;
+          width: 25px;
+        }
+
+        p {
+          font-size: 12px;
+          color: rgba(50, 43, 5, 0.8);
+          width: 249px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobileS} {
+    .row {
+      .item {
+        img {
+          left: 0px;
         }
       }
     }

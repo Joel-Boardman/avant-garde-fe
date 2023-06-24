@@ -77,4 +77,24 @@ export const Section = styled.section`
       }
     }
   }
+
+  @media ${devices.tablet} {
+    .content {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    padding: 50px 0;
+    .content {
+      h2 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
 `;

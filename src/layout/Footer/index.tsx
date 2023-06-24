@@ -53,13 +53,13 @@ const Footer: React.FC = () => {
             </div>
             <div className="footer__top--socials">
               <div>
-                <h3>FOLLOW US</h3>
+                <h3>Follow Us</h3>
                 <Link to="/">
                   <img src={InstaSVG} alt="instagram" />
                 </Link>
               </div>
               <div>
-                <h3>CONTACT US</h3>
+                <h3>Contact Us</h3>
                 <Link to="/">
                   <img src={EmailSVG} alt="Email" />
                 </Link>

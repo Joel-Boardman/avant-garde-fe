@@ -12,6 +12,10 @@ export const Section = styled.section`
   @media ${devices.laptopS} {
     padding: 70px 0px;
   }
+
+  @media ${devices.mobileL} {
+    padding: 40px 0px;
+  }
 `;
 
 export const Content = styled.div<{ arrayIndex: number }>`
@@ -68,7 +72,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
   }
 
   .info {
-    height: 500px;
+    height: 450px;
     display: flex;
     color: #fff;
 
@@ -108,6 +112,10 @@ export const Content = styled.div<{ arrayIndex: number }>`
         overflow-x: auto;
         position: absolute;
         width: 933px;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         > .watchItem {
           min-width: 450px;
@@ -231,6 +239,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
         .right-img-two {
           width: 270px;
           top: 37%;
+          opacity: 0.6;
         }
       }
     }
@@ -262,6 +271,87 @@ export const Content = styled.div<{ arrayIndex: number }>`
         .right-img-two {
           left: 90%;
           width: 90%;
+        }
+      }
+    }
+  }
+
+  @media ${devices.tablet} {
+    .info {
+      &__left {
+        &.watch-info {
+          width: 65%;
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    .options {
+      &__container {
+        display: flex;
+        align-items: end;
+        justify-content: flex-start;
+        width: 246px;
+        height: 55px;
+        max-height: 55px;
+
+        button {
+          max-width: 80px;
+          color: rgba(255, 255, 255, 0.6);
+          font-weight: 400;
+          line-height: 17px;
+          &.selected {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+
+        &:after {
+          content: "";
+          border-bottom: 1px solid #fff;
+          width: ${(props) => (Number(props.arrayIndex) + 1) * 82 + "px"};
+          transition: 0.5s;
+          z-index: 2;
+        }
+      }
+    }
+
+    .info {
+      height: 350px;
+      &.mobile-col {
+        flex-direction: column;
+        height: 750px;
+
+        .info__right {
+          width: 100% !important;
+        }
+
+        .watch-carousel {
+          top: 50px !important;
+        }
+
+        .watch-info {
+          width: 100%;
+        }
+      }
+
+      &__left {
+        h3 {
+          font-size: 14px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+
+      &__right {
+        width: 60%;
+        .right-img {
+          width: 127%;
+          right: -25%;
+          top: 25%;
         }
       }
     }
