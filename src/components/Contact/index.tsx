@@ -1,7 +1,13 @@
 import React from "react";
 
 // Styles
-import { Section, Content, Button } from "./styles";
+import { Section, Content, Button, InfoContent } from "./styles";
+
+// Images
+import InstaSVG from "../../assets/icons/insta-yellow.svg";
+import EmailSVG from "../../assets/icons/email-yellow.svg";
+import PhoneSVG from "../../assets/icons/phone-yellow.svg";
+import PinSVG from "../../assets/icons/pin-yellow.svg";
 
 const Contact: React.FC = () => {
   return (
@@ -13,6 +19,12 @@ const Contact: React.FC = () => {
           </div>
           <div className="content__bottom">
             <div className="content__bottom--quad">
+              <input
+                type="text"
+                name="fullName"
+                id=""
+                placeholder="Full Name"
+              />
               <input
                 type="text"
                 name="firstName"
@@ -59,6 +71,41 @@ const Contact: React.FC = () => {
           </div>
         </Content>
       </div>
+      <InfoContent>
+        <div className="border">
+          <div className="content__top">
+            <h2>Enquire About Excellence</h2>
+            <p>
+              The opportunity for you to purchase your very own luxury watch
+              from the likes of Rolex, Audemars Piguet, and Richard Mille could
+              be soon.
+            </p>
+
+            <p>
+              Explore our excellent range of items today by enquiring directly
+              to Avant-Garde Global using any of these contact methods, or
+              simply fill out the form below.
+            </p>
+            <ul>
+              <li>
+                <img src={PhoneSVG} alt="Phone" /> 0162 5469 859
+              </li>
+              <li>
+                <img src={InstaSVG} alt="Insta" />
+                View our Instagram
+              </li>
+              <li>
+                <img src={EmailSVG} alt="Email" />
+                sales@avantgarde-global.co.uk
+              </li>
+              <li>
+                <img src={PinSVG} alt="Pin" />
+                Cheshire, SK9
+              </li>
+            </ul>
+          </div>
+        </div>
+      </InfoContent>
     </Section>
   );
 };

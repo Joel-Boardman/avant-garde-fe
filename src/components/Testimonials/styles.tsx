@@ -173,7 +173,7 @@ export const TestContainer = styled.div`
     }
   }
 
-  @media ${devices.mobileS} {
+  @media (max-width: 420px) {
     .card {
       min-width: calc(100vw - 6.2rem);
       width: calc(100vw - 6.2rem);

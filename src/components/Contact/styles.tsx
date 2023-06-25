@@ -2,14 +2,25 @@ import styled from "styled-components";
 import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
-  padding: 160px 0px 200px;
+  /* padding: 160px 0px 0px;
 
   @media ${devices.laptopS} {
-    padding: 160px 0px 150px;
+    padding: 160px 0px 0;
+  } */
+
+  /* @media ${devices.laptopS} {
+    padding: 140px 0px 0;
+  } */
+
+  @media ${devices.mobileL} {
+    display: flex;
+    flex-direction: column-reverse;
   }
 `;
 
 export const Content = styled.div`
+  padding: 150px 0 160px;
+
   .content__top {
     text-align: center;
     margin: 0 auto 40px;
@@ -28,6 +39,12 @@ export const Content = styled.div`
       justify-content: space-between;
       flex-wrap: wrap;
       margin-bottom: 34px;
+
+      > input {
+        &:first-of-type {
+          display: none;
+        }
+      }
 
       > input,
       > textarea {
@@ -155,6 +172,8 @@ export const Content = styled.div`
   }
 
   @media ${devices.laptopS} {
+    padding: 150px 0 110px;
+
     .content__top {
       h2 {
         font-size: 40px;
@@ -166,6 +185,292 @@ export const Content = styled.div`
       &--quad {
         > input {
           max-width: 395px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.tabletL} {
+    .content__bottom {
+      max-width: 650px;
+
+      &--quad {
+        > input {
+          max-width: 318px;
+        }
+      }
+      &--confirm {
+        .container {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.tablet} {
+    .content__top {
+      h2 {
+        font-size: 35px;
+      }
+    }
+    .content__bottom {
+      max-width: 590px;
+
+      &--quad {
+        > input {
+          max-width: 287px;
+        }
+
+        > input,
+        > textarea {
+          font-size: 12px;
+          margin-bottom: 15px;
+          padding: 11px 0px 11px 25px;
+        }
+      }
+      &--confirm {
+        .container {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.tabletS} {
+    padding: 130px 0 80px;
+
+    .content {
+      &__top {
+        max-width: 514px;
+
+        h2 {
+          font-size: 30px;
+          margin-bottom: 13px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+      &__bottom {
+        max-width: 508px;
+
+        &--quad {
+          margin-bottom: 20px;
+          > input {
+            max-width: 248px;
+          }
+        }
+
+        &--confirm {
+          margin-bottom: 27px;
+          .container {
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    padding: 50px 0 80px;
+
+    .content {
+      &__top {
+        margin: 0px auto 29px;
+
+        h2 {
+          margin-bottom: 3px;
+        }
+        p {
+          font-size: 11px;
+        }
+      }
+      &__bottom {
+        &--quad {
+          flex-direction: column;
+
+          > textarea {
+            font-size: 12px;
+            color: rgba(50, 43, 5, 0.4);
+
+            &::placeholder {
+              color: rgba(50, 43, 5, 0.4);
+            }
+          }
+          > input {
+            width: 100%;
+            max-width: 100%;
+            font-size: 12px;
+            color: rgba(50, 43, 5, 0.4);
+
+            &::placeholder {
+              color: rgba(50, 43, 5, 0.4);
+            }
+
+            &:first-of-type {
+              display: block;
+            }
+
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobile} {
+    .content {
+      &__top {
+        h2 {
+          font-size: 22px;
+        }
+
+        p {
+          font-size: 9px;
+        }
+      }
+
+      &__bottom {
+        &--confirm {
+          .container {
+            font-size: 8px;
+            line-height: 9px;
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const InfoContent = styled.div`
+  background: #f4f4f4;
+  padding: 150px 0 160px;
+
+  .content {
+    &__top {
+      max-width: 525px;
+      h2 {
+        font-size: 50px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        color: var(--yellow-word, #322b05);
+        font-size: 16px;
+        font-family: "area-extended";
+        line-height: 30px;
+
+        margin-bottom: 25px;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          margin: 20px 0;
+          font-size: 14px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          img {
+            margin-right: 12px;
+            height: 26px;
+            width: 26px;
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.tablet} {
+    padding: 100px 0px;
+
+    .content__top {
+      max-width: 375px;
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 22px;
+      }
+
+      ul {
+        li {
+          font-size: 10px;
+          margin: 13px 0px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.tabletS} {
+    padding: 80px 0px;
+
+    .content__top {
+      max-width: 335px;
+      h2 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 10px;
+        line-height: 18px;
+      }
+
+      ul {
+        li {
+          font-size: 10px;
+          margin: 13px 0px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    padding: 120px 0px 40px;
+
+    .content__top {
+      max-width: 335px;
+      h2 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 10px;
+        line-height: 18px;
+      }
+
+      ul {
+        li {
+          font-size: 10px;
+          margin: 9px 0px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobile} {
+    padding: 120px 0px 40px;
+
+    .content__top {
+      max-width: 335px;
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      ul {
+        li {
+          font-size: 12px;
+          margin: 9px 0px;
         }
       }
     }
@@ -211,5 +516,10 @@ export const Button = styled.button`
       transform: scaleY(-1);
       background: #fbd71f;
     }
+  }
+
+  @media ${devices.tablet} {
+    padding: 12px 50px;
+    font-size: 14px;
   }
 `;

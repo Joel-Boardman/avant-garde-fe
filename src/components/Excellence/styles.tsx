@@ -11,6 +11,7 @@ export const Section = styled.section`
 
   @media ${devices.tabletL} {
     padding: 50px 0;
+    margin-top: -5px;
   }
 `;
 

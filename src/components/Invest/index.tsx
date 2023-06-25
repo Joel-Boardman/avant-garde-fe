@@ -21,6 +21,12 @@ const Invest: React.FC = () => {
             <div className="content__bottom--quad">
               <input
                 type="text"
+                name="fullName"
+                id=""
+                placeholder="Full Name"
+              />
+              <input
+                type="text"
                 name="firstName"
                 id=""
                 placeholder="First Name"
