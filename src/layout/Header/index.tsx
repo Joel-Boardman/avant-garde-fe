@@ -16,7 +16,7 @@ import { HeaderSection } from "./styles";
 const Header: React.FC = () => {
   const location = useLocation();
   const [defaultHeader, setDefaultHeader] = useState<boolean>(true);
-  const [openHeader, setOpenHeader] = useState<boolean>(false);
+  const [openHeader, setOpenHeader] = useState<boolean | null>(null);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,8 +54,21 @@ const Header: React.FC = () => {
       </div>
       <div className="mobile-header-btn">
         <button
-          className={`${openHeader ? "open" : "close"}`}
-          onClick={() => setOpenHeader(!openHeader)}
+          className={`${
+            typeof openHeader === "boolean" && openHeader
+              ? "open"
+              : typeof openHeader === "boolean" && !openHeader
+              ? "close"
+              : ""
+          }`}
+          onClick={() => {
+            console.log(typeof openHeader);
+            if (typeof openHeader !== "boolean") {
+              setOpenHeader(true);
+            } else {
+              setOpenHeader(!openHeader);
+            }
+          }}
         ></button>
       </div>
       {defaultHeader ? (

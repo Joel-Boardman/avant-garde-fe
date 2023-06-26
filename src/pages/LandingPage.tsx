@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Components
 import Hero from "../components/Hero";
+import HeroMobile from "../components/HeroMobile";
 import Perfection from "../components/Perfection";
 import Trusted from "../components/Trusted";
 import Excellence from "../components/Excellence";
@@ -11,9 +12,23 @@ import ImgBanner from "../components/ImgBanner";
 import Living from "../components/Living";
 
 const LandingPage: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
   return (
     <>
-      <Hero />
+      {windowWidth >= 960 ? <Hero /> : <HeroMobile />}
       <Perfection />
       <Trusted />
       <Excellence />
