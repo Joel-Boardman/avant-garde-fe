@@ -9,9 +9,9 @@ export const Section = styled.section`
     padding: 0;
   }
 
-  @media ${devices.mobileL} {
+  /* @media ${devices.mobileL} {
     display: none;
-  }
+  } */
 `;
 
 export const Banner = styled.div`
@@ -19,6 +19,9 @@ export const Banner = styled.div`
   flex-direction: row;
   justify-content: center;
   background: white;
+
+  position: relative;
+  z-index: 250;
 
   > img {
     width: 25%;

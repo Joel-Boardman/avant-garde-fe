@@ -81,7 +81,14 @@ const Perfection: React.FC = () => {
 
   return (
     <Section ref={ref}>
-      <video autoPlay muted loop className="sidebar">
+      <video
+        autoPlay={true}
+        muted={true}
+        preload="auto"
+        id="myVideo"
+        loop={true}
+        className="sidebar"
+      >
         <source src={WatchVideo} type="video/mp4" />
       </video>
       <div className="border">

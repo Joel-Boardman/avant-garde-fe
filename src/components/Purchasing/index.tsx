@@ -193,7 +193,15 @@ const Purchasing: React.FC = () => {
 
     var viewportOffset = el?.getBoundingClientRect();
 
-    console.log(el?.getBoundingClientRect().height);
+    let a = document?.querySelector("body")?.getBoundingClientRect().height;
+    let b = section?.getBoundingClientRect()?.height;
+
+    if (typeof a === "number" && typeof b === "number") {
+      console.log("A: ", a, "B: ", b);
+      console.log("------> ", a - b);
+      console.log("---> ", el?.getBoundingClientRect().top);
+    }
+
     el?.getBoundingClientRect().height
       ? setElementHeight(el?.getBoundingClientRect().height)
       : setElementHeight(elementHeight);
@@ -205,9 +213,6 @@ const Purchasing: React.FC = () => {
       el?.classList.remove("fix-item");
       section?.classList.remove("extend");
     }
-    // if (viewportOffset?.y) {
-    //   if(document.documentElement.scrollTop)
-    // }
   };
 
   return (
