@@ -1,205 +1,13 @@
-import styled, { keyframes } from "styled-components";
-
-const introH1 = keyframes`
-    0%{
-        color: grey;
-    }
-
-
-    20%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%);
-        color: grey;
-    }
-
-    40%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%);
-        color: grey;
-    }
-
-    50%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%);
-        color: grey;
-        text-align: left;
-    }
-
-    60%{
-        transform: translate(calc(-50% + 20px), -50%) scale(1.3);
-        color: white;
-
-    }
-
-    75%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%) scale(1.3);
-        color: white;
-    }
-
-    90%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%) scale(1.3);
-        color: white;
-    }
-`;
-
-const introH2 = keyframes`
-    0%{
-        
-    }
-
-
-    20%{
-        left: -50%;
-    }
-
-    50%{
-        left: -50%;
-    }
-
-    60%{
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    75%{
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    90%{
-        left: 50%;
-        transform: translateX(-50%);
-    }
-`;
-
-const introImg = keyframes`
-    0%{
-    }
-
-
-    20%{
-        top: -50%;
-        opacity: 0;
-    }
-
-    22%{
-        top: 150%;
-        opacity: 0;
-    }
-
-    40%{
-    }
-
-    50%{
-
-    }
-
-    60%{
-        top: 150%;
-        opacity: 0;
-    }
-
-    75%{
-        top: 150%;
-        opacity: 0;
-    }
-
-    90%{
-  
-    }
-`;
-
-const btnIdle = keyframes`
-    100%{
-        top: calc(46% + 10px);
-    }
-`;
-
-const btnIdlePulse = keyframes`
-    0%{
-        transform: translate(-50%, -50%) rotate(45deg) scale(0.8);
-    }
-`;
-
-const introInfo = keyframes`
-    0%{
-        position: absolute;
-        left: 0;
-    }
-
-
-    20%{
-        opacity: 0;
-        left: -100%;
-        position: absolute;
-
-    }
-
-    50%{
-        opacity: 0;
-        left: 0%;
-        position: absolute;
-        height: 0;
-
-    }
-
-    60%{
-        opacity: 0;
-        left: 0%;
-        position: absolute;
-        height: 0;
-    }
-
-    75%{
-        left: 0%;
-        position: absolute;
-        opacity: 0;
-        height: 0;
-    }
-
-    90%{
-        left: 0%;
-        position: absolute;
-        opacity: 0;
-        height: 0;
-    }
-
-    100%{
-        left: 0%;
-        position: absolute;
-        opacity: 1;
-    }
-`;
-
-const introBtn = keyframes`
-    0%{
-        position: absolute;
-    }
-
-
-    25%{
-        right: -100%;
-        opacity: 0;
-    }
-
-
-    75%{
-        right: -100%;
-        opacity: 0;
-    }
-
-    100%{
-        right: 0%;
-        opacity: 1;
-    }
-`;
+import styled from "styled-components";
+import {
+  introBtn,
+  introH1,
+  introH2,
+  introImg,
+  introInfo,
+  btnIdle,
+  btnIdlePulse,
+} from "./animations";
 
 export const Section = styled.section`
   padding: 10px 0 50px;
@@ -208,13 +16,20 @@ export const Section = styled.section`
   .border {
     display: flex;
   }
+
+  @media (min-width: 560px) {
+    padding: 43px 0px 50px;
+  }
+
+  @media (min-width: 750px) {
+    padding: 70px 0px 30px;
+  }
 `;
 
 export const Content = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
-  /* min-height: 650px; */
 
   .btn-container {
     position: absolute;
@@ -326,6 +141,46 @@ export const Content = styled.div`
 
       .info-content {
         animation: 2s ease-in 0.1s 1 ${introInfo};
+      }
+    }
+  }
+
+  @media (min-width: 560px) {
+    .content__top {
+      h1 {
+        font-size: 35px;
+      }
+
+      img {
+        width: 200px;
+        right: 13%;
+      }
+    }
+
+    .content__bottom {
+      h2 {
+        font-size: 18px;
+      }
+
+      .info-content {
+        font-size: 14px;
+        margin-top: 85px;
+      }
+    }
+  }
+
+  @media (min-width: 750px) {
+    .content__bottom {
+      .info-content {
+        margin-top: 62px;
+      }
+    }
+  }
+
+  @media (min-width: 810px) {
+    .content__bottom {
+      .info-content {
+        /* margin-top: 55px; */
       }
     }
   }

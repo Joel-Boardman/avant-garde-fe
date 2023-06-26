@@ -69,6 +69,7 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   }
 
   @media ${devices.tabletL} {
+    padding: 42px;
     &.hide {
       background: transparent;
       transition: 0.5s;

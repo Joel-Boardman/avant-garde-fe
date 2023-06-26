@@ -22,12 +22,17 @@ export const Section = styled.section`
   );
 
   video {
-    position: fixed;
-    top: 0%;
+    position: absolute;
+    top: -200px;
     left: 0;
     width: 100%;
     height: auto;
     z-index: -10;
+
+    &.is-sticky {
+      position: fixed;
+      top: -98px;
+    }
   }
 
   .content {
@@ -69,6 +74,14 @@ export const Section = styled.section`
 
   @media ${devices.tabletL} {
     background: rgba(0, 0, 0, 0.8);
+
+    /* video {
+      top: -150px;
+      &.is-sticky {
+        position: fixed;
+        top: -80px;
+      }
+    } */
     .content {
       h2 {
         color: white;
