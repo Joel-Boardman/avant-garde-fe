@@ -80,7 +80,8 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
       }
     }
     &.show {
-      background: #000;
+      background-color: ${(props) =>
+        props.defaultHeader ? "#0d0d0d" : "#fff"};
       transition: 0.5s;
 
       .mobile-header {
@@ -207,7 +208,7 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   }
 
   @media ${devices.mobileL} {
-    background-color: ${(props) => (props.defaultHeader ? "#000" : "#fff")};
+    background-color: ${(props) => (props.defaultHeader ? "#0d0d0d" : "#fff")};
 
     .mobile-header {
       padding-top: 120px;

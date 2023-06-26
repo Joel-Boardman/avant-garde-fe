@@ -298,3 +298,22 @@ export const Button = styled.button`
     }
   }
 `;
+
+export const ButtonMobile = styled.button`
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: "area-extended";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  padding: 14px 30px;
+  text-align: center;
+
+  color: #5f510d;
+  border: 1px solid #fff;
+  background: #fbd71f;
+  transition: 300ms;
+  position: relative;
+  z-index: 2;
+`;
