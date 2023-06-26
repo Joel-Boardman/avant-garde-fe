@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 // Images
 import WatchImg from "../../assets/background/watch-img.png";
@@ -18,8 +19,10 @@ import { Section, Content } from "./styles";
 const Purchasing: React.FC = () => {
   const [arrayIndex, setArrayIndex] = useState<number>(0);
   const [animation, setAnimation] = useState<string>("");
-
+  const [fixItem, setFixItem] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [top, setTop] = useState(0);
+  const [elementHeight, setElementHeight] = useState<number>(0);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -159,10 +162,58 @@ const Purchasing: React.FC = () => {
     }, 550);
   }, [animation]);
 
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      let el = document.querySelector(".testing");
+      var viewportOffset = el?.getBoundingClientRect();
+      if (viewportOffset?.top) {
+        setTop(viewportOffset?.top);
+      }
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    if (!top) return;
+
+    window.addEventListener("scroll", stick);
+    return () => {
+      window.removeEventListener("scroll", stick);
+    };
+  }, [top]);
+
+  const stick = () => {
+    let border = document.querySelector(".border");
+
+    let el = document.querySelector(".testing");
+    let section = document.querySelector(".purchase-section");
+
+    var viewportOffset = el?.getBoundingClientRect();
+
+    console.log(el?.getBoundingClientRect().height);
+    el?.getBoundingClientRect().height
+      ? setElementHeight(el?.getBoundingClientRect().height)
+      : setElementHeight(elementHeight);
+
+    if (document.documentElement.scrollTop > top) {
+      el?.classList.add("fix-item");
+      section?.classList.add("extend");
+    } else {
+      el?.classList.remove("fix-item");
+      section?.classList.remove("extend");
+    }
+    // if (viewportOffset?.y) {
+    //   if(document.documentElement.scrollTop)
+    // }
+  };
+
   return (
-    <Section>
-      <div className="border">
-        <Content arrayIndex={arrayIndex}>
+    <Section className="purchase-section" height={elementHeight}>
+      <div className={`${fixItem ? "fix-item" : ""} testing border`}>
+        <Content arrayIndex={arrayIndex} ref={ref}>
           <div className="options">
             <div className="options__container">
               <button

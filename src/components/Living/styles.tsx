@@ -5,6 +5,9 @@ export const Section = styled.section`
   padding: 140px 0;
   background: white;
 
+  position: relative;
+  z-index: 250;
+
   .info {
     margin-bottom: 99px;
     h2,

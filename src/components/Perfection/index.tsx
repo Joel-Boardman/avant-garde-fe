@@ -63,11 +63,18 @@ const Perfection: React.FC = () => {
     const scrollTop = window.scrollY;
 
     if (sidebarTop) {
-      console.log(scrollTop, sidebarTop + 98);
-      if (scrollTop >= sidebarTop - 98) {
-        sidebarEl?.classList.add("is-sticky");
+      if (windowWidth < 590) {
+        if (scrollTop >= sidebarTop - 98) {
+          sidebarEl?.classList.add("is-sticky");
+        } else {
+          sidebarEl?.classList.remove("is-sticky");
+        }
       } else {
-        sidebarEl?.classList.remove("is-sticky");
+        if (scrollTop >= sidebarTop + 98) {
+          sidebarEl?.classList.add("is-sticky");
+        } else {
+          sidebarEl?.classList.remove("is-sticky");
+        }
       }
     }
   };

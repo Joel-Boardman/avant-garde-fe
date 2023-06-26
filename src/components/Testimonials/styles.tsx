@@ -5,6 +5,8 @@ export const Section = styled.section`
   padding: 95px 0px 79px;
   background: white;
   min-height: 800px;
+  position: relative;
+  z-index: 250;
 
   .border {
     padding: 0 11rem;

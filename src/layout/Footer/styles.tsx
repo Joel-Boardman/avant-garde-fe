@@ -6,6 +6,9 @@ export const FooterSection = styled.footer`
   padding: 60px 0 30px;
   color: white;
 
+  position: relative;
+  z-index: 250;
+
   h3 {
     font-style: normal;
     font-weight: 600;

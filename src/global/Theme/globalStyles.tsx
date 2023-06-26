@@ -43,11 +43,11 @@ export const GlobalStyle = createGlobalStyle`
     min-height: inherit;
 
     @media ${devices.laptopS}{
-      padding: 0 2.6rem;
+      padding: 0 2.6rem !important;
     }
 
     @media ${devices.tabletS}{
-      padding: 0 1.6rem;
+      padding: 0 1.6rem !important;
     }
   }
 

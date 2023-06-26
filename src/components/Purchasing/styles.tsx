@@ -5,16 +5,43 @@ const fadeIn = keyframes`
   0% {opacity: 0;}
   100% {opacity: 1;}
 `;
-export const Section = styled.section`
+export const Section = styled.section<{ height: number }>`
   padding: 70px 0 160px 0;
   background: #000;
+  overflow: hidden;
+
+  .border {
+    height: auto;
+    &.fix-item {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+      max-width: none;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0px 5.8rem;
+    }
+  }
+
+  &.extend {
+    height: ${(props) => props.height + 160 * 2}px;
+  }
 
   @media ${devices.laptopS} {
     padding: 70px 0px;
+
+    &.extend {
+      height: ${(props) => props.height + 70 * 2}px;
+    }
   }
 
   @media ${devices.mobileL} {
     padding: 40px 0px;
+
+    &.extend {
+      height: ${(props) => props.height + 40 * 2}px;
+    }
   }
 `;
 
