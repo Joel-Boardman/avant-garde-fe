@@ -202,7 +202,7 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   }
 
   @media ${devices.tablet} {
-    padding: 39px 15px;
+    padding: 42px 15px;
     > img {
       width: 200px;
     }

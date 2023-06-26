@@ -91,10 +91,39 @@ export const Section = styled.section`
     }
   }
 
+  @media (max-width: 880px) {
+    video {
+      width: calc(100% + 200px);
+      height: auto;
+    }
+  }
+
   @media ${devices.tablet} {
     .content {
       p {
         font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 690px) {
+    video {
+      width: calc(100% + 250px);
+      left: -10%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 690px) {
+    video {
+      top: 0px;
+      width: calc(100% + 120px);
+      height: auto;
+      left: 0;
+
+      &.is-sticky {
+        position: fixed;
+        top: 90px;
       }
     }
   }
