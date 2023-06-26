@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+
+// Images
+import WatchImg from "../../assets/images/watch.png";
+import WatchGoldImg from "../../assets/images/watch-gold.png";
+import WatchSilverImg from "../../assets/images/watch-silver.png";
 
 // Styles
 import { Section, Content } from "./styles";
 
 const Trusted: React.FC = () => {
+  const [mouseEnter, setMouseEnter] = useState("");
   return (
     <Section>
       <div className="border">
         <Content>
-          <div className="ani-container">TO BE DONE</div>
+          <div
+            onMouseEnter={() => setMouseEnter("animate-in")}
+            onMouseLeave={() => setMouseEnter("animate-out")}
+            className={`${mouseEnter} ani-container`}
+          >
+            <img src={WatchGoldImg} alt="Gold Watch" />
+            <img src={WatchImg} alt="Steel Watch" />
+            <img src={WatchSilverImg} alt="Steel Watch" />
+          </div>
           <div className="info-container">
-            <h2>Your Trusted Supplier For Stellar Timepieces</h2>
+            <h2>
+              Your Trusted Supplier <br />
+              For Stellar Timepieces
+            </h2>
             <p>
               Founded in 2018, Avant-Garde Global is one of the UK’s leading
               specialists and providers of luxury watches. Our expert team

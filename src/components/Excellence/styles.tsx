@@ -1,7 +1,18 @@
 import styled from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
   padding: 160px 0 100px;
+  background: white;
+
+  @media ${devices.laptopS} {
+    padding: 80px 0;
+  }
+
+  @media ${devices.tabletL} {
+    padding: 50px 0;
+    margin-top: -5px;
+  }
 `;
 
 export const Content = styled.div`
@@ -51,6 +62,90 @@ export const Content = styled.div`
           position: absolute;
           top: 0;
           left: -15px;
+        }
+      }
+    }
+  }
+
+  @media ${devices.laptopS} {
+    .banner-info {
+      h2 {
+        width: 100%;
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .quad-info {
+      &__container {
+        justify-content: flex-end;
+        margin-top: 50px;
+        &--item {
+          margin: 25px;
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.tabletL} {
+    .banner-info {
+      p {
+        display: none;
+      }
+    }
+
+    .quad-info {
+      &__container {
+        justify-content: center;
+
+        &--item {
+          width: 340px;
+
+          img {
+            top: 5px;
+          }
+          h3 {
+            color: rgba(50, 43, 5, 0.75);
+          }
+
+          p {
+            color: rgba(0, 0, 0, 0.7);
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    .banner-info {
+      h2 {
+        font-size: 25px;
+        max-width: 200px;
+      }
+    }
+
+    .quad-info {
+      &__container {
+        margin-top: 30px;
+
+        &--item {
+          max-width: 240px;
+
+          h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 25px;
+          }
+
+          p {
+            font-size: 12px;
+          }
         }
       }
     }

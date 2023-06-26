@@ -1,35 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Assets
 import Item1SVG from "../../assets/icons/item-1.svg";
 import Item2SVG from "../../assets/icons/item-2.svg";
 import Item3SVG from "../../assets/icons/item-3.svg";
+
+import Item1SVGYellow from "../../assets/icons/item-1-yellow.svg";
+import Item2SVGYellow from "../../assets/icons/item-2-yellow.svg";
+import Item3SVGYellow from "../../assets/icons/item-3-yellow.svg";
+
 // Styles
 import { Section, Content } from "./styles";
 
 const Excellence: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
+
   const infoArray = [
     {
-      icon: Item1SVG,
+      icon: windowWidth > 960 ? Item1SVG : Item1SVGYellow,
       title: "Only The Finest For You",
       body: "From Rolex to Richard Mille, and Audemars Piguet to Patek Phillipe, Avant-Garde Global holds expert-levels of knowledge on the world’s most luxurious watches.",
     },
     {
-      icon: Item2SVG,
+      icon: windowWidth > 960 ? Item2SVG : Item2SVGYellow,
       title: "Outstanding Customer Service ",
       body: "Our expert team prides itself on delivering an exceptional customer service experience for both new and returning customers alike.",
     },
     {
-      icon: Item3SVG,
+      icon: windowWidth > 960 ? Item3SVG : Item3SVGYellow,
       title: "More Than Just A Retailer",
       body: "Avant-Garde Global offers both watch purchasing and selling opportunities to all of our customers. Simply enquire today to discover how we can help you with exactly what you need.",
     },
     {
-      icon: Item3SVG,
+      icon: windowWidth > 960 ? Item3SVG : Item3SVGYellow,
       title: "Renowned Around The World",
       body: "Having established a global reputation for our stock, expertise and reliability, discover just what makes us one of the UK’s, and World’s, most trusted providers of luxury watches.",
     },
   ];
+
   return (
     <Section>
       <div className="border">

@@ -1,11 +1,37 @@
 import React, { useEffect, useState } from "react";
 
+// Images
+import WatchImg from "../../assets/background/watch-img.png";
+import WatchTwoImg from "../../assets/background/watch-img-2.png";
+import watchPngOne from "../../assets/images/av-watch-1.png";
+import watchPngTwo from "../../assets/images/av-watch-2.png";
+import watchPngThree from "../../assets/images/av-watch-3.png";
+import watchPngFour from "../../assets/images/av-watch-4.png";
+import watchPngFive from "../../assets/images/av-watch-5.png";
+
+import WatchOneImgMobile from "../../assets/images/purchase-watch-one.png";
+import WatchTwoImgMobile from "../../assets/images/trusted-img.png";
+
 // Styles
 import { Section, Content } from "./styles";
 
 const Purchasing: React.FC = () => {
   const [arrayIndex, setArrayIndex] = useState<number>(0);
   const [animation, setAnimation] = useState<string>("");
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
 
   const infoArray = [
     {
@@ -26,6 +52,15 @@ const Purchasing: React.FC = () => {
           </p>
         </div>
       ),
+      right: [
+        <>
+          <img
+            src={windowWidth > 960 ? WatchImg : WatchOneImgMobile}
+            alt="Watch"
+            className="right-img"
+          />
+        </>,
+      ],
     },
     {
       content: (
@@ -46,11 +81,23 @@ const Purchasing: React.FC = () => {
           </p>
         </div>
       ),
+      right: [
+        <>
+          <img
+            src={windowWidth > 960 ? WatchTwoImg : WatchTwoImgMobile}
+            alt="Watch"
+            className="right-img-two"
+          />
+        </>,
+      ],
     },
     {
       content: (
-        <div>
-          <h3>Only The Finest Options For You</h3>
+        <div className="watch-info">
+          <h3>
+            Only The Finest <br />
+            Options For You
+          </h3>
           <br />
           <p>
             {" "}
@@ -61,6 +108,43 @@ const Purchasing: React.FC = () => {
           </p>
         </div>
       ),
+      right: [
+        <div className="watch-carousel">
+          <div className="watchItem">
+            <div>
+              <img src={watchPngOne} alt="" />
+            </div>
+            <p>Audemars Piguet Skeleton</p>
+          </div>
+
+          <div className="watchItem">
+            <div>
+              <img src={watchPngTwo} alt="" />
+            </div>
+            <p>Patek Philippe 5980R</p>
+          </div>
+
+          <div className="watchItem">
+            <div>
+              <img src={watchPngThree} alt="" />
+            </div>
+            <p>Patek Philippe 5711R</p>
+          </div>
+          <div className="watchItem">
+            <div>
+              <img src={watchPngFour} alt="" />
+            </div>
+            <p>Rolex Daytona</p>
+          </div>
+
+          <div className="watchItem">
+            <div>
+              <img src={watchPngFive} alt="" />
+            </div>
+            <p>Rolex Batgirl</p>
+          </div>
+        </div>,
+      ],
     },
   ];
 
@@ -81,16 +165,37 @@ const Purchasing: React.FC = () => {
         <Content arrayIndex={arrayIndex}>
           <div className="options">
             <div className="options__container">
-              <button onClick={() => handleSelect(0)}>Purchase</button>
-              <button onClick={() => handleSelect(1)}>Selling</button>
-              <button onClick={() => handleSelect(2)}>Available Watches</button>
+              <button
+                onClick={() => handleSelect(0)}
+                className={`${arrayIndex === 0 ? "selected" : ""}`}
+              >
+                Purchase
+              </button>
+              <button
+                onClick={() => handleSelect(1)}
+                className={`${arrayIndex === 1 ? "selected" : ""}`}
+              >
+                Selling
+              </button>
+              <button
+                onClick={() => handleSelect(2)}
+                className={`${arrayIndex === 2 ? "selected" : ""}`}
+              >
+                Available Watches
+              </button>
             </div>
           </div>
-          <div className="info">
-            <div className={`info__left ${animation}`}>
+          <div className={`info ${arrayIndex === 2 ? "mobile-col" : ""}`}>
+            <div
+              className={`info__left ${animation} ${
+                arrayIndex === 2 ? "watch-info" : ""
+              }`}
+            >
               {infoArray[arrayIndex].content}
             </div>
-            <div className="info__right"></div>
+            <div className={`info__right ${animation}`}>
+              {infoArray[arrayIndex].right}
+            </div>
           </div>
         </Content>
       </div>

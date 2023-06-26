@@ -1,9 +1,12 @@
 import React from "react";
 
+// Components
+import Contact from "../components/Contact";
+
 const ContactPage: React.FC = () => {
   return (
     <>
-      <h1>contact page</h1>
+      <Contact />
     </>
   );
 };
