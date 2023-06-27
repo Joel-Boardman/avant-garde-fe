@@ -17,7 +17,7 @@ export const Section = styled.section<{ height: number }>`
       top: 0;
       width: 100%;
       z-index: 200;
-      max-width: none;
+      max-width: 1440px;
       left: 50%;
       transform: translateX(-50%);
       padding: 0px 5.8rem;
@@ -25,7 +25,7 @@ export const Section = styled.section<{ height: number }>`
   }
 
   &.extend {
-    height: ${(props) => props.height + 160 * 2}px;
+    height: ${(props) => props.height + 70 + 160}px;
   }
 
   @media ${devices.laptopS} {

@@ -265,9 +265,8 @@ export const Content = styled.div`
         font-size: 12px;
       }
     }
-  }
-
-  .ani-container {
-    width: 26%;
+    .ani-container {
+      width: 26%;
+    }
   }
 `;

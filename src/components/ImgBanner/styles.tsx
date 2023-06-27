@@ -5,6 +5,9 @@ export const Section = styled.section`
   background: white;
   padding: 10px 0;
 
+  position: relative;
+  z-index: 250;
+
   @media ${devices.tabletL} {
     padding: 0;
   }

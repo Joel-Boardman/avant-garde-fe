@@ -193,25 +193,42 @@ const Purchasing: React.FC = () => {
 
     var viewportOffset = el?.getBoundingClientRect();
 
-    let a = document?.querySelector("body")?.getBoundingClientRect().height;
-    let b = section?.getBoundingClientRect()?.height;
+    let a = window?.scrollY;
+    let b = el?.getBoundingClientRect()?.y;
 
-    if (typeof a === "number" && typeof b === "number") {
-      console.log("A: ", a, "B: ", b);
-      console.log("------> ", a - b);
-      console.log("---> ", el?.getBoundingClientRect().top);
-    }
+    let c = window?.scrollY;
+    let d = section?.getBoundingClientRect()?.y;
+
+    let res = typeof c === "number" && typeof d === "number" ? c + d : top;
+
+    let differenceInHeight =
+      typeof section?.getBoundingClientRect()?.height === "number" &&
+      typeof el?.getBoundingClientRect()?.height === "number"
+        ? (section?.getBoundingClientRect()?.height -
+            el?.getBoundingClientRect()?.height) /
+          2
+        : 0;
 
     el?.getBoundingClientRect().height
       ? setElementHeight(el?.getBoundingClientRect().height)
       : setElementHeight(elementHeight);
 
-    if (document.documentElement.scrollTop > top) {
-      el?.classList.add("fix-item");
-      section?.classList.add("extend");
+    if (windowWidth <= 1280) {
+      if (document.documentElement.scrollTop > res + differenceInHeight) {
+        el?.classList.add("fix-item");
+        section?.classList.add("extend");
+      } else {
+        el?.classList.remove("fix-item");
+        section?.classList.remove("extend");
+      }
     } else {
-      el?.classList.remove("fix-item");
-      section?.classList.remove("extend");
+      if (document.documentElement.scrollTop > res + 70) {
+        el?.classList.add("fix-item");
+        section?.classList.add("extend");
+      } else {
+        el?.classList.remove("fix-item");
+        section?.classList.remove("extend");
+      }
     }
   };
 
