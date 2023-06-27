@@ -17,7 +17,7 @@ export const Section = styled.section<{ height: number }>`
       top: 0;
       width: 100%;
       z-index: 200;
-      max-width: 1440px;
+      max-width: none;
       left: 50%;
       transform: translateX(-50%);
       padding: 0px 5.8rem;

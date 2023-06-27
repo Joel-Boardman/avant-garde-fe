@@ -88,7 +88,7 @@ const fadeOutRight = keyframes`
 `;
 
 export const Section = styled.section`
-  padding: 160px 0;
+  padding: 100px 0;
   background: white;
 
   @media ${devices.laptopS} {

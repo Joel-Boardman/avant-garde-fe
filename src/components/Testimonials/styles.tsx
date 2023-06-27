@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
-  padding: 95px 0px 79px;
+  padding: 100px 0px 50px;
   background: white;
   min-height: 800px;
   position: relative;

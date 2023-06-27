@@ -123,6 +123,7 @@ export const Section = styled.section`
 
     .row {
       .item {
+        max-width: 291px;
         h4 {
           font-size: 14px;
           color: rgba(50, 43, 5, 1);
