@@ -153,7 +153,12 @@ const HeroMobile: React.FC = () => {
   useEffect(() => {
     const resetTimeoutImg = setTimeout(() => {
       if (loaded) {
-        setArrayIndexDelay(arrayIndexDelay + 1);
+        let a = arrayIndexDelay + 1;
+        if (a < paginationImages.length) {
+          setArrayIndexDelay(arrayIndexDelay + 1);
+        } else {
+          setArrayIndexDelay(0);
+        }
       }
     }, 500);
 
@@ -171,6 +176,16 @@ const HeroMobile: React.FC = () => {
     setLoaded(true);
   });
 
+  const handleIncrement = () => {
+    console.log(paginationImages.length);
+    let a = arrayIndex + 1;
+    if (a < paginationImages.length) {
+      setArrayIndex(arrayIndex + 1);
+    } else {
+      setArrayIndex(0);
+    }
+  };
+
   return (
     <Section>
       <div className="border">
@@ -181,7 +196,7 @@ const HeroMobile: React.FC = () => {
           </div>
           <div className="btn-container">
             <button
-              onClick={() => setArrayIndex(arrayIndex + 1)}
+              onClick={handleIncrement}
               disabled={disable ? true : false}
               className="next-btn"
             >

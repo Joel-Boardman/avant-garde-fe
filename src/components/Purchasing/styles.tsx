@@ -349,7 +349,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
       height: 350px;
       &.mobile-col {
         flex-direction: column;
-        height: 750px;
+        height: 515px;
 
         .info__right {
           width: 100% !important;
