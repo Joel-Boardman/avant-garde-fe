@@ -36,7 +36,6 @@ export const Content = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 80px 0 120px;
-  animation: 0.5s linear 0s forwards ${fadeInSection};
 
   .watch-info {
     width: 50%;

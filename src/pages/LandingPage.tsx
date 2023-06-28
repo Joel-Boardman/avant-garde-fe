@@ -15,8 +15,9 @@ import Living from "../components/Living";
 
 const LandingPage: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  const [data, setData] = useState(true);
+  const [loaded, setLoaded] = useState(true);
   const [retrieveData, setRetrieveData] = useState<null | boolean>(false);
+
   useEffect(() => {
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
@@ -30,19 +31,24 @@ const LandingPage: React.FC = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem("viewedSite", JSON.stringify(data));
-    let a = localStorage.getItem("viewedSite") || "false";
-    setRetrieveData(JSON.parse(a));
-  }, [data]);
+    if (loaded) {
+      let a = sessionStorage.getItem("viewedSite") || "false";
+      setRetrieveData(JSON.parse(a));
+      console.log(a);
+    }
+  }, [loaded]);
+
+  useEffect(() => {
+    setLoaded(true);
+  });
 
   return (
     <>
-      <HeroStatic />
-      {/* {retrieveData ? (
+      {retrieveData ? (
         <>{windowWidth >= 960 ? <HeroStatic /> : <HeroMobile />}</>
       ) : (
         <>{windowWidth >= 960 ? <Hero /> : <HeroMobile />}</>
-      )} */}
+      )}
       <Perfection />
       <Trusted />
       <Excellence />

@@ -26,6 +26,22 @@ const Hero: React.FC = () => {
   const navigate = useNavigate();
   const [animation, setAnimation] = useState<string>("");
   const [arrayIndex, setArrayIndex] = useState<number>(0);
+
+  const [loaded, setLoaded] = useState(true);
+  const [retrieveData, setRetrieveData] = useState<null | boolean>(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (loaded) {
+      setTimeout(() => {
+        sessionStorage.setItem("viewedSite", JSON.stringify(true));
+      }, 10000);
+    }
+  }, [loaded]);
+
   const watchInfo = [
     {
       background: watchPngBackgroundOne,
