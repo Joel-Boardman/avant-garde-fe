@@ -51,6 +51,18 @@ export const Content = styled.div<{ arrayIndex: number }>`
     animation-duration: 0.5s;
   }
 
+  .mobile-btn {
+    display: none;
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 12px;
+    font-family: "area-extended";
+    line-height: 26px;
+  }
+
   .options {
     &__container {
       max-width: 417px;
@@ -273,6 +285,9 @@ export const Content = styled.div<{ arrayIndex: number }>`
   }
 
   @media ${devices.tabletL} {
+    .mobile-btn {
+      display: block;
+    }
     .info {
       &__left {
         width: 155%;
@@ -354,7 +369,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
         .info__right {
           width: 100% !important;
           .watch-carousel {
-            top: 50px !important;
+            top: 15px !important;
 
             > .watch-item {
               min-width: 200px !important;

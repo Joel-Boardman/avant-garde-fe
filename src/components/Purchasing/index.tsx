@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Images
 import WatchImg from "../../assets/background/watch-img.png";
@@ -18,6 +18,7 @@ import WatchTwoImgMobile from "../../assets/images/trusted-img.png";
 import { Section, Content } from "./styles";
 
 const Purchasing: React.FC = () => {
+  const navigate = useNavigate();
   const [arrayIndex, setArrayIndex] = useState<number>(0);
   const [animation, setAnimation] = useState<string>("");
   const [fixItem, setFixItem] = useState<boolean>(false);
@@ -66,6 +67,9 @@ const Purchasing: React.FC = () => {
             We proudly stock the likes of Rolex and Richard Mille, and can have
             these watches ready for you to admire upon your enquiry.
           </p>
+          <button className="mobile-btn" onClick={() => navigate("/contact")}>
+            Enquire Now
+          </button>
         </div>
       ),
       right: [
@@ -95,6 +99,9 @@ const Purchasing: React.FC = () => {
             price we recommend selling it for. Get in touch with us today to
             discuss this further.
           </p>
+          <button className="mobile-btn" onClick={() => navigate("/contact")}>
+            Enquire Now
+          </button>
         </div>
       ),
       right: [
@@ -122,6 +129,9 @@ const Purchasing: React.FC = () => {
             Phillipe, Richard Mille and more by enquiring about our current
             stock at Avant-Garde Global.
           </p>
+          <button className="mobile-btn" onClick={() => navigate("/contact")}>
+            Enquire Now
+          </button>
         </div>
       ),
       right: [
