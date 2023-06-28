@@ -19,9 +19,6 @@ import watchPngBackgroundFive from "../../assets/background/watch-five.png";
 // Styles
 import { Section, Content, Button } from "./styles";
 
-// Components
-import HeroAnimation from "../HeroAnimation";
-
 const Hero: React.FC = () => {
   const navigate = useNavigate();
   const [animation, setAnimation] = useState<string>("");
@@ -219,7 +216,6 @@ const Hero: React.FC = () => {
   return (
     <Section background={watchInfo[arrayIndex].background}>
       <div className="border">
-        <HeroAnimation />
         <Content>
           <div className="watch-info">
             <div className={`title ${animation}`}>

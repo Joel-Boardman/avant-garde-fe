@@ -15,6 +15,7 @@ import {
   moveAndFade,
   removeEntirely,
 } from "./animations";
+import { devices } from "../../layout/devices";
 
 export const AnimationWrapper = styled.div`
   position: absolute;
@@ -24,6 +25,8 @@ export const AnimationWrapper = styled.div`
   width: 100%;
   height: 90%;
   overflow: hidden;
+
+  animation: 0.5s linear 10s forwards ${removeEntirely};
 `;
 
 export const Section = styled.div`
@@ -37,8 +40,17 @@ export const Section = styled.div`
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 140%;
+    /* width: 140%; */
+    width: 2000px;
     z-index: 2s;
+
+    @media ${devices.laptopS} {
+      left: calc(50% - 2px);
+    }
+
+    @media (max-width: 1000px) {
+      left: calc(50% - 6px);
+    }
 
     &:nth-of-type(1) {
       animation: 1.5s 1s forwards 1 ${shrink},
@@ -58,8 +70,9 @@ export const Section = styled.div`
       5s ease-in 1s forwards 1 ${fadeToBottomTicker};
 
     position: absolute;
-    top: 21%;
+    top: 19%;
     left: 51.4%;
+    /* left: calc(51.4% + 5px); */
     z-index: 2s;
 
     img {

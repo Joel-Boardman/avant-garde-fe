@@ -1,18 +1,22 @@
 import styled, { keyframes } from "styled-components";
+import { devices } from "../../layout/devices";
 
 export const shrink = keyframes`
     100% {
-      width:90%;
+      /* width:90%; */
+      width: 1300px;
       top: 40%;
+
     }
 `;
 
 export const shrinkTicker = keyframes`
     100%{
-      height: 360px;
+      height: 375px;
       width: 21px;
-      top: 31%;
+      top: 29%;
       left: 51%;
+      /* left: calc(51% + 5px); */
     }
 `;
 
@@ -51,9 +55,12 @@ export const fadeToTop = keyframes`
 
 export const fadeToBottom = keyframes`
   80%{
-    width:90%;
+    /* width:90%;
     top: 40%;
+    opacity: 1; */
     opacity: 1;
+    width: 1300px;
+    top: 40%;
   }
   100%{
     top: 80%;
@@ -65,9 +72,9 @@ export const fadeToBottom = keyframes`
 export const fadeToBottomTicker = keyframes`
   80%{
     transform: translate(-50%, -50%) rotate(31deg);
-    height: 360px;
+    height: 375px;
       width: 21px;
-      top: 31%;
+      top: 29%;
       left: 51%;
     opacity: 1;
   }
@@ -145,6 +152,6 @@ export const moveAndFade = keyframes`
 
 export const removeEntirely = keyframes`
   100%{
-    display: none;
+    opacity: 0;
   }
 `;
