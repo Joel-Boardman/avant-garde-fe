@@ -10,9 +10,10 @@ import watchPngTwo from "../../assets/images/av-watch-2.png";
 import watchPngThree from "../../assets/images/av-watch-3.png";
 import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
+import { useNavigate } from "react-router-dom";
 const HeroMobile: React.FC = () => {
+  const navigate = useNavigate();
   const [loaded, setLoaded] = useState<boolean>(false);
-
   const [arrayIndex, setArrayIndex] = useState<number>(0);
   const [arrayIndexDelay, setArrayIndexDelay] = useState<number>(0);
   const [disable, setDisable] = useState<boolean>(false);
@@ -33,7 +34,7 @@ const HeroMobile: React.FC = () => {
 
           <br />
           <br />
-          <ButtonMobile>
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
           </ButtonMobile>
         </>
@@ -53,7 +54,7 @@ const HeroMobile: React.FC = () => {
           </p>
           <br />
           <br />
-          <ButtonMobile>
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
           </ButtonMobile>
         </>
@@ -74,7 +75,7 @@ const HeroMobile: React.FC = () => {
           </p>
           <br />
           <br />
-          <ButtonMobile>
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
           </ButtonMobile>
         </>
@@ -99,7 +100,7 @@ const HeroMobile: React.FC = () => {
           </p>
           <br />
           <br />
-          <ButtonMobile>
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
           </ButtonMobile>
         </>
@@ -124,7 +125,7 @@ const HeroMobile: React.FC = () => {
           </p>
           <br />
           <br />
-          <ButtonMobile>
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
           </ButtonMobile>
         </>
