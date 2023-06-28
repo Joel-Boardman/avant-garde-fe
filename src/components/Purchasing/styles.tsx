@@ -427,4 +427,14 @@ export const Content = styled.div<{ arrayIndex: number }>`
       }
     }
   }
+
+  @media ${devices.mobile} {
+    .info {
+      &__left {
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+  }
 `;
