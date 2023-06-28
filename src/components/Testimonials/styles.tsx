@@ -31,8 +31,7 @@ export const Section = styled.section`
 
   @media ${devices.mobileL} {
     min-height: 430px;
-    padding: 80px 0px 0px;
-
+    padding: 80px 0px 50px;
     .border {
       padding: 0 1.6rem;
     }
