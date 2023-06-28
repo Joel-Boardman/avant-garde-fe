@@ -353,10 +353,18 @@ export const Content = styled.div<{ arrayIndex: number }>`
 
         .info__right {
           width: 100% !important;
-        }
+          .watch-carousel {
+            top: 50px !important;
 
-        .watch-carousel {
-          top: 50px !important;
+            > .watch-item {
+              min-width: 200px !important;
+              div {
+                img {
+                  height: 165px !important;
+                }
+              }
+            }
+          }
         }
 
         .watch-info {
@@ -379,6 +387,27 @@ export const Content = styled.div<{ arrayIndex: number }>`
           width: 127%;
           right: -25%;
           top: 25%;
+        }
+      }
+    }
+
+    .info {
+      &__right {
+        width: 100% !important;
+        .watch-carousel {
+          top: 50px !important;
+
+          > .watchItem {
+            min-width: 200px !important;
+            p {
+              font-size: 16px;
+            }
+            div {
+              img {
+                height: 165px !important;
+              }
+            }
+          }
         }
       }
     }
