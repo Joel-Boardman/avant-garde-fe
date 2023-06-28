@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 // Images
 import ImgOne from "../../assets/icons/y-item-1.svg";
@@ -9,6 +10,19 @@ import ImgThree from "../../assets/icons/y-item-3.svg";
 import { Section } from "./styles";
 
 const Living: React.FC = () => {
+  const myRef = useRef<null | HTMLElement>(null);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#process" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
+
   const infoArray = [
     {
       icon: ImgOne,
@@ -27,7 +41,7 @@ const Living: React.FC = () => {
     },
   ];
   return (
-    <Section>
+    <Section ref={myRef}>
       <div className="border">
         <div className="info">
           <h2>It’s Time For You To Start Living Luxuriously</h2>

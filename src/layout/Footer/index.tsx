@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // Images
 import LogoSVG from "../../assets/icons/logo.svg";
 import InstaSVG from "../../assets/icons/insta.svg";
+import FacebookSVG from "../../assets/icons/facebook.svg";
 import EmailSVG from "../../assets/icons/email.svg";
 import PhoneSVG from "../../assets/icons/phone.svg";
 import PinSVG from "../../assets/icons/pin.svg";
@@ -54,21 +55,30 @@ const Footer: React.FC = () => {
             <div className="footer__top--socials">
               <div>
                 <h3>Follow Us</h3>
-                <Link to="/">
+                <Link
+                  to="https://www.instagram.com/avant_garde_global/"
+                  target="__blank"
+                >
                   <img src={InstaSVG} alt="instagram" />
+                </Link>
+                <Link
+                  to="https://www.facebook.com/people/Avant-Garde-Global/100069338290876/"
+                  target="__blank"
+                >
+                  <img src={FacebookSVG} alt="facebook" />
                 </Link>
               </div>
               <div>
                 <h3>Contact Us</h3>
-                <Link to="/">
+                <Link to="mailto: sales@avantgarde-global.co.uk">
                   <img src={EmailSVG} alt="Email" />
                 </Link>
-                <Link to="/">
+                <Link to="tel: 0161 528 5388">
                   <img src={PhoneSVG} alt="Phone" />
                 </Link>
-                <Link to="/">
+                {/* <Link to="/">
                   <img src={PinSVG} alt="Pin" />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -77,15 +87,21 @@ const Footer: React.FC = () => {
               <p>@ 2023 Avant-Garde Global. All Rights Reserved.</p>
               <ul>
                 <li>
-                  <Link to="/">Terms & Conditions</Link>
+                  <Link to="/docs/terms.pdf" target="__blank">
+                    Terms & Conditions
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/">Privacy Policy</Link>
+                  <Link to="/docs/privacy.pdf" target="__blank">
+                    Privacy Policy
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="footer__bottom--right">
-              <img src={OpopLogo} alt="Opop Media" />
+              <Link to="https://opopmedia.co.uk/" target="__blank">
+                <img src={OpopLogo} alt="Opop Media" />
+              </Link>
             </div>
           </div>
         </div>

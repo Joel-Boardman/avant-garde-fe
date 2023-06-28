@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 // Images
 import WatchImg from "../../assets/images/watch.png";
@@ -10,8 +11,22 @@ import { Section, Content } from "./styles";
 
 const Trusted: React.FC = () => {
   const [mouseEnter, setMouseEnter] = useState("");
+  const myRef = useRef<null | HTMLElement>(null);
+
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#about" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
+
   return (
-    <Section>
+    <Section ref={myRef}>
       <div className="border">
         <Content>
           <div

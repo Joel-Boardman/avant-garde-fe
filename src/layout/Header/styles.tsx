@@ -150,11 +150,28 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
         border: none;
         outline: none;
 
+        &.btn-white {
+          &:before {
+            border: 1px solid white;
+          }
+          &:after {
+            border: 1px solid white;
+          }
+        }
+
+        &.btn-black {
+          &:before {
+            border: 1px solid black;
+          }
+          &:after {
+            border: 1px solid black;
+          }
+        }
+
         &:before {
           content: "";
           position: absolute;
           height: 1px;
-          border: 1px solid white;
           width: 100%;
           top: 0%;
           left: 0;
@@ -162,7 +179,6 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
 
         &:after {
           content: "";
-          border: 1px solid white;
           position: absolute;
           height: 1px;
           width: 100%;

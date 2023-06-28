@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Slider from "react-slick";
 import { testimonialData } from "./data";
 
@@ -13,8 +14,21 @@ const Hero: React.FC = () => {
     slidesToScroll: 1,
     centerMode: true,
   };
+
+  const myRef = useRef<null | HTMLElement>(null);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#testimonials" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
   return (
-    <Section>
+    <Section ref={myRef}>
       <div className="border">
         <Content>
           <div className="info">

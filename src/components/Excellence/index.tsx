@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 // Assets
 import Item1SVG from "../../assets/icons/item-1.svg";
@@ -14,6 +15,18 @@ import { Section, Content } from "./styles";
 
 const Excellence: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const myRef = useRef<null | HTMLElement>(null);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#ethos" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -51,7 +64,7 @@ const Excellence: React.FC = () => {
   ];
 
   return (
-    <Section>
+    <Section ref={myRef}>
       <div className="border">
         <Content>
           <div className="banner-info">

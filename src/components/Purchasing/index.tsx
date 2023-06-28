@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 
 // Images
 import WatchImg from "../../assets/background/watch-img.png";
@@ -23,6 +24,18 @@ const Purchasing: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [top, setTop] = useState(0);
   const [elementHeight, setElementHeight] = useState<number>(0);
+  const myRef = useRef<null | HTMLElement>(null);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#services" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -233,7 +246,7 @@ const Purchasing: React.FC = () => {
   };
 
   return (
-    <Section className="purchase-section" height={elementHeight}>
+    <Section className="purchase-section" height={elementHeight} ref={myRef}>
       <div className={`${fixItem ? "fix-item" : ""} testing border`}>
         <Content arrayIndex={arrayIndex} ref={ref}>
           <div className="options">
