@@ -52,15 +52,16 @@ export const Content = styled.div<{ arrayIndex: number }>`
   }
 
   .mobile-btn {
-    display: none;
+    /* display: none; */
     border: none;
     outline: none;
     background: none;
     margin-top: 15px;
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
     font-family: "area-extended";
     line-height: 26px;
+    cursor: pointer;
   }
 
   .options {
@@ -287,6 +288,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
   @media ${devices.tabletL} {
     .mobile-btn {
       display: block;
+      font-size: 12px;
     }
     .info {
       &__left {

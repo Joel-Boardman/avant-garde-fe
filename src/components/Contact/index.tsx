@@ -8,6 +8,7 @@ import InstaSVG from "../../assets/icons/insta-yellow.svg";
 import EmailSVG from "../../assets/icons/email-yellow.svg";
 import PhoneSVG from "../../assets/icons/phone-yellow.svg";
 import PinSVG from "../../assets/icons/pin-yellow.svg";
+import { Link } from "react-router-dom";
 
 const Contact: React.FC = () => {
   return (
@@ -61,8 +62,11 @@ const Contact: React.FC = () => {
                 {" "}
                 By sending your enquiry, you consent to being contacted by
                 Avant-Garde Global or one of our affiliated partners in regards
-                to your enquiry, as well as the terms listed within our Privacy
-                Policy.
+                to your enquiry, as well as the terms listed within our{" "}
+                <Link to="/docs/privacy.pdf" target="__blank">
+                  Privacy Policy
+                </Link>
+                .
                 <input type="checkbox" />
                 <span className="checkmark"></span>
               </label>

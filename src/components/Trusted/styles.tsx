@@ -106,6 +106,21 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  .mobile-btn {
+    /* display: none; */
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: 15px;
+
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-family: "area-extended";
+    line-height: 26px;
+    cursor: pointer;
+  }
+
   .ani-container,
   .info-container {
     width: 50%;

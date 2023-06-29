@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styles
 import { Section, Content, Button } from "./styles";
@@ -55,8 +56,11 @@ const Invest: React.FC = () => {
                 {" "}
                 By sending your enquiry, you consent to being contacted by
                 Avant-Garde Global or one of our affiliated partners in regards
-                to your enquiry, as well as the terms listed within our Privacy
-                Policy.
+                to your enquiry, as well as the terms listed within our{" "}
+                <Link to="/docs/privacy.pdf" target="__blank">
+                  Privacy Policy
+                </Link>
+                .
                 <input type="checkbox" />
                 <span className="checkmark"></span>
               </label>

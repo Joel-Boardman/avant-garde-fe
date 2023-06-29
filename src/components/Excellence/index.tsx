@@ -44,7 +44,7 @@ const Excellence: React.FC = () => {
     {
       icon: windowWidth > 960 ? Item1SVG : Item1SVGYellow,
       title: "Only The Finest For You",
-      body: "From Rolex to Richard Mille, and Audemars Piguet to Patek Phillipe, Avant-Garde Global holds expert-levels of knowledge on the world’s most luxurious watches.",
+      body: "From Rolex to Richard Mille, and Audemars Piguet to Patek Philippe, Avant-Garde Global holds expert-levels of knowledge on the world’s most luxurious watches.",
     },
     {
       icon: windowWidth > 960 ? Item2SVG : Item2SVGYellow,

@@ -93,6 +93,10 @@ export const Content = styled.div`
         line-height: 19px;
         letter-spacing: -0.05em;
         color: #322b05;
+
+        a {
+          color: #322b05;
+        }
       }
 
       .container input {

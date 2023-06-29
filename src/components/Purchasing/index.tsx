@@ -126,7 +126,7 @@ const Purchasing: React.FC = () => {
             {" "}
             We want to extend our passion and appreciation for watches directly
             to you: uncover the beauty and luxurious nature of Rolex, Patek
-            Phillipe, Richard Mille and more by enquiring about our current
+            Philippe, Richard Mille and more by enquiring about our current
             stock at Avant-Garde Global.
           </p>
           <button className="mobile-btn" onClick={() => navigate("/contact")}>
