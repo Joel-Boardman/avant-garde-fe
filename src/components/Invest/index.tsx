@@ -33,7 +33,11 @@ const Invest: React.FC = () => {
   };
 
   const handleSubmission = async () => {
-    if (!fullName || !email || !phone) {
+    let nameConcat =
+      !fullName && firstName && lastName ? firstName + " " + lastName : "";
+    let nameFull = fullName ? fullName : nameConcat;
+
+    if (!nameFull || !email || !phone) {
       return Notify.failure("Please complete the form before submitting.");
     }
 

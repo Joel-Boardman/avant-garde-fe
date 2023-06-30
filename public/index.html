@@ -52,4 +52,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="https://webservices.data-8.co.uk/javascript/loader.ashx?key=%REACT_APP_DATA8_KEY%&load=InternationalTelephoneValidation,EmailValidation,PredictiveAddress"></script>
+  <script>
+    window.predictiveAddress = new data8.predictiveaddress();
+  </script>
 </html>

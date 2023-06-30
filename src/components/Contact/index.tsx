@@ -48,7 +48,11 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmission = async () => {
-    if (!fullName || !email || !phone) {
+    let nameConcat =
+      !fullName && firstName && lastName ? firstName + " " + lastName : "";
+    let nameFull = fullName ? fullName : nameConcat;
+
+    if (!nameFull || !email || !phone) {
       return Notify.failure("Please complete the form before submitting.");
     }
 
@@ -92,9 +96,9 @@ const Contact: React.FC = () => {
 
     axios({
       method: "POST",
-      url: `${process.env.REACT_APP_ENDPOINT}create-lead-invest`,
+      url: `${process.env.REACT_APP_ENDPOINT}create-lead-enquire`,
       data: {
-        fullName: fullName,
+        fullName: nameFull,
         email: email,
         telephone: phone,
       },
