@@ -97,6 +97,8 @@ const Invest: React.FC = () => {
       },
     });
 
+    setFullName(nameFull);
+
     setSubmitted(true);
   };
   return (

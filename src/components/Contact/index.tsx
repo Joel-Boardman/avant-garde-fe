@@ -112,6 +112,7 @@ const Contact: React.FC = () => {
       },
     });
 
+    setFullName(nameFull);
     setSubmitted(true);
   };
   return (
