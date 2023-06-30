@@ -152,7 +152,7 @@ const Hero: React.FC = () => {
             casual experiences, and are a testament to the class and quality
             conveyed through luxury watches. 
           </p>
-          <b />
+          <br />
           <p>
             This model, affectionately dubbed ‘The Batgirl’ for its more-refined
             design and visually stunning black and blue bezel, is one of the
