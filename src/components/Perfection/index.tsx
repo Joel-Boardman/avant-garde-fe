@@ -82,8 +82,8 @@ const Perfection: React.FC = () => {
   return (
     <Section ref={ref}>
       <video
-        autoPlay={true}
-        muted={true}
+        autoPlay
+        muted
         preload="auto"
         id="myVideo"
         loop={true}
