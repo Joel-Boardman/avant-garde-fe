@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
     <Section>
       <div className="border">
         <Content>
-          {submitted ? (
+          {!submitted ? (
             <>
               <div className="content__top">
                 <h2>Get In Touch</h2>
