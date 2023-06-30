@@ -29,6 +29,8 @@ const Invest: React.FC = () => {
       setEmail(e.currentTarget.value);
     } else if (name === "telephone") {
       setPhone(e.currentTarget.value);
+    } else if (name === "fullName") {
+      setFullName(e.currentTarget.value);
     }
   };
 
@@ -89,7 +91,7 @@ const Invest: React.FC = () => {
       method: "POST",
       url: `${process.env.REACT_APP_ENDPOINT}create-lead-invest`,
       data: {
-        fullName: fullName,
+        fullName: nameFull,
         email: email,
         telephone: phone,
       },

@@ -108,6 +108,7 @@ const Contact: React.FC = () => {
         fullName: nameFull,
         email: email,
         telephone: phone,
+        message: message,
       },
     });
 
