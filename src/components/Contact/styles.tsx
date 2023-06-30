@@ -527,3 +527,85 @@ export const Button = styled.button`
     font-size: 14px;
   }
 `;
+
+export const ThankYouContent = styled.div`
+  text-align: center;
+  font-family: "area-extended";
+
+  max-width: 737px;
+  margin: 0 auto;
+  h4 {
+    color: #000;
+    font-size: 50px;
+    font-family: "casanova";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    margin-bottom: 29px;
+  }
+
+  p {
+    font-family: "area-extended";
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    margin-top: 50px;
+  }
+
+  @media ${devices.tabletL} {
+    h4 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media ${devices.tabletS} {
+    min-height: 40vh;
+    max-width: 550px;
+    h4 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    min-height: 40vh;
+    max-width: 550px;
+    h4 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+`;
