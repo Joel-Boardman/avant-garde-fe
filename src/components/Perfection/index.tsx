@@ -81,16 +81,23 @@ const Perfection: React.FC = () => {
 
   return (
     <Section ref={ref}>
+      <div
+        className="sidebar"
+        dangerouslySetInnerHTML={{
+          __html: `
       <video
         autoPlay
         muted
         preload="auto"
         id="myVideo"
-        loop={true}
-        className="sidebar"
+        loop
       >
-        <source src={WatchVideo} type="video/mp4" />
+        <source src="${WatchVideo}" type="video/mp4" />
       </video>
+      `,
+        }}
+      />
+
       <div className="border">
         <div className={`content ${animation}`}>
           <h2>Purveyors Of Perfection</h2>

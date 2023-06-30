@@ -21,14 +21,17 @@ export const Section = styled.section`
     rgba(0, 0, 0, 0.78) 100%
   );
 
-  video {
+  .sidebar {
     position: absolute;
     top: -200px;
     left: 0;
     width: 100%;
-    height: auto;
     z-index: -10;
 
+    video {
+      width: 100%;
+      height: auto;
+    }
     &.is-sticky {
       position: fixed;
       top: -98px;
@@ -92,7 +95,7 @@ export const Section = styled.section`
   }
 
   @media (max-width: 880px) {
-    video {
+    .sidebar {
       width: calc(100% + 200px);
       height: auto;
     }
@@ -107,7 +110,7 @@ export const Section = styled.section`
   }
 
   @media (max-width: 690px) {
-    video {
+    .sidebar {
       width: calc(100% + 250px);
       left: -10%;
       height: auto;
@@ -115,11 +118,16 @@ export const Section = styled.section`
   }
 
   @media (max-width: 690px) {
-    video {
+    .sidebar {
       top: 0px;
       width: calc(100% + 120px);
-      height: auto;
       left: 0;
+
+      height: auto;
+
+      video {
+        height: auto;
+      }
 
       &.is-sticky {
         position: fixed;
