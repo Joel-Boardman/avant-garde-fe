@@ -10,7 +10,7 @@ export const data8Validation = async (data: any, endpoint: string) => {
       },
     });
 
-    return res;
+    return res.data;
   } catch (err) {
     return err;
   }
