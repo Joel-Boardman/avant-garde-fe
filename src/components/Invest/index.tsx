@@ -46,33 +46,40 @@ const Invest: React.FC = () => {
         "Please agree to being contacted by Avant Garde Global."
       );
     }
-    const telephoneValidation = await data8Validation({
-      telephoneNumber: phone,
-      defaultCountry: "GB",
-      options: {
-        UseMobileValidation: false,
-        UseLineValidation: false,
-        RequiredCountry: "",
-        AllowedPrefixes: "",
-        BarredPrefixes: "",
-        UseUnavailableStatus: true,
-        UseAmbiguousStatus: true,
-        TreatUnavailableMobileAsInvalid: false,
-        ExcludeUnlikelyNumbers: false,
+    const telephoneValidation = await data8Validation(
+      {
+        telephoneNumber: phone,
+        defaultCountry: "GB",
+        options: {
+          UseMobileValidation: false,
+          UseLineValidation: false,
+          RequiredCountry: "",
+          AllowedPrefixes: "",
+          BarredPrefixes: "",
+          UseUnavailableStatus: true,
+          UseAmbiguousStatus: true,
+          TreatUnavailableMobileAsInvalid: false,
+          ExcludeUnlikelyNumbers: false,
+        },
       },
-    });
+      "https://webservices.data-8.co.uk/InternationalTelephoneValidation/IsValid.json?key="
+    );
 
+    console.log(telephoneValidation);
     if (telephoneValidation?.Result?.ValidationResult !== "Valid") {
       return Notify.failure("Please provide a valid telephone number.");
     }
 
-    const emailValidation = await data8Validation({
-      email: email,
-      level: "MX",
-      options: {
-        MissingMXRecordHandling: "ServerCheck",
+    const emailValidation = await data8Validation(
+      {
+        email: email,
+        level: "MX",
+        options: {
+          MissingMXRecordHandling: "ServerCheck",
+        },
       },
-    });
+      "https://webservices.data-8.co.uk/EmailValidation/IsValid.json?key="
+    );
 
     if (emailValidation.Result !== "Valid") {
       return Notify.failure("Please provide a valid email.");
