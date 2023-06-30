@@ -62,6 +62,10 @@ export const fadeToBottom = keyframes`
     width: 1300px;
     top: 40%;
   }
+  90%{
+
+opacity: 0;
+}
   100%{
     top: 80%;
     opacity: 0;
@@ -77,6 +81,10 @@ export const fadeToBottomTicker = keyframes`
       top: 29%;
       left: 51%;
     opacity: 1;
+  }
+  90%{
+
+    opacity: 0;
   }
   100%{
     bottom: 0;

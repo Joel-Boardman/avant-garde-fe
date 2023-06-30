@@ -78,6 +78,14 @@ export const Section = styled.div`
     img {
       width: 100%;
     }
+
+    @media (min-width: 1700px) {
+      left: 51%;
+    }
+
+    @media (min-width: 1900px) {
+      left: 50.8% !important;
+    }
   }
 `;
 

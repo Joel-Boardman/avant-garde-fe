@@ -44,11 +44,12 @@ const LandingPage: React.FC = () => {
 
   return (
     <>
-      {retrieveData ? (
+      <Hero />
+      {/* {retrieveData ? (
         <>{windowWidth >= 960 ? <HeroStatic /> : <HeroMobile />}</>
       ) : (
         <>{windowWidth >= 960 ? <Hero /> : <HeroMobile />}</>
-      )}
+      )} */}
       <Perfection />
       <Trusted />
       <Excellence />
