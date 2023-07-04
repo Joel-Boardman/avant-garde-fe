@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
     } else if (name === "message") {
       setMessage(e.currentTarget.value);
     } else if (name === "fullName") {
-      setMessage(e.currentTarget.value);
+      setFullName(e.currentTarget.value);
     }
   };
 
