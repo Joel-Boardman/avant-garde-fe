@@ -116,9 +116,13 @@ export const FooterSection = styled.footer`
     }
   }
 
+  &.extend {
+    min-height: auto;
+  }
+
   @media (min-height: 1300px) {
-    .extend {
-      min-height: 60vh;
+    &.extend {
+      min-height: 60vh !important;
     }
   }
 
