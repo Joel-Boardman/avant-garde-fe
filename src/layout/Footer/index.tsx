@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Images
 import LogoSVG from "../../assets/icons/logo.svg";
@@ -13,8 +13,9 @@ import OpopLogo from "../../assets/icons/opop-logo.svg";
 // Styles
 import { FooterSection } from "./styles";
 const Footer: React.FC = () => {
+  const location = useLocation();
   return (
-    <FooterSection>
+    <FooterSection className={location.pathname !== "/" ? "extend" : ""}>
       <div className="border">
         <div className="footer">
           <div className="footer__top">
