@@ -15,7 +15,7 @@ import { FooterSection } from "./styles";
 const Footer: React.FC = () => {
   const location = useLocation();
   return (
-    <FooterSection className={location.pathname !== "/" ? "extend" : ""}>
+    <FooterSection className={location.pathname === "/invest" ? "extend" : ""}>
       <div className="border">
         <div className="footer">
           <div className="footer__top">
