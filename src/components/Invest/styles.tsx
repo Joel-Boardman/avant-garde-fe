@@ -5,7 +5,7 @@ export const Section = styled.section`
   padding: 160px 0px 200px;
 
   @media (min-width: 1500px) {
-    min-height: 80vh;
+    padding: 180px 0px 250px;
   }
 
   @media ${devices.laptopS} {
