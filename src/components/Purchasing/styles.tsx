@@ -471,5 +471,6 @@ export const Content = styled.div<{ arrayIndex: number }>`
         }
       }
     }
+  
   }
 `;
