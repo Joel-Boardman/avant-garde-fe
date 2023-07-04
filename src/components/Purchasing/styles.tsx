@@ -173,7 +173,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
         flex-direction: row;
         overflow-x: auto;
         position: absolute;
-        /* width: 933px; */
+        width: 933px;
 
         &::-webkit-scrollbar {
           display: none;
@@ -283,7 +283,10 @@ export const Content = styled.div<{ arrayIndex: number }>`
         .watch-carousel {
           /* width: 618px; */
           /* width: calc(100% + 2.8rem); */
-          width: auto;
+          /* width: auto; */
+          /* width: 1000px; */
+          width: 200px;
+}
           > .watchItem {
             min-width: 400px;
             > div {
@@ -396,14 +399,14 @@ export const Content = styled.div<{ arrayIndex: number }>`
           width: 100% !important;
           .watch-carousel {
             top: 15px !important;
-            justify-content: center;
-
+            /* justify-content: center; */
+            justify-content: flex-start;
             > .watchItem {
               min-width: 200px !important;
               div {
                 padding: 30px 0;
                 img {
-                  /* height: 165px !important; */
+                  height: 165px !important;
                   height: 212px !important;
                 }
               }
@@ -413,6 +416,8 @@ export const Content = styled.div<{ arrayIndex: number }>`
 
         .watch-info {
           width: 100%;
+          margin-right: 20px;
+
         }
       }
 
