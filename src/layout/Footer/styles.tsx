@@ -116,6 +116,10 @@ export const FooterSection = styled.footer`
     }
   }
 
+  @media (min-height: 1300px) {
+    min-height: 60vh;
+  }
+
   @media ${devices.tabletL} {
     .footer {
       &__top {
