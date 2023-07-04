@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import TrustImg from "../../assets/images/trusted-img.png";
+// import TrustImg from "../../assets/images/trusted-img.png";
+import TrustImg from "../../assets/images/watch.png";
 
 // Devices
 import { devices } from "../../layout/devices";
@@ -245,6 +246,11 @@ export const Content = styled.div`
 
   @media ${devices.tabletL} {
     align-items: flex-start;
+
+    .mobile-btn {
+      display: block;
+      font-size: 12px;
+    }
 
     .ani-container {
       background-image: url(${TrustImg});

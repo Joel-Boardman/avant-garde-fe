@@ -51,7 +51,7 @@ export const Content = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 21px;
+        /* line-height: 21px; */
         letter-spacing: -0.05em;
         font-family: "area-extended";
 
@@ -376,16 +376,43 @@ export const InfoContent = styled.div`
         list-style: none;
 
         li {
-          margin: 20px 0;
-          font-size: 14px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
+          a {
+            /* text-decoration: none; */
+            color: #322b05;
+            margin: 20px 0;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
-          img {
-            margin-right: 12px;
-            height: 26px;
-            width: 26px;
+            background: linear-gradient(
+              to right,
+              #bfa315,
+              #bfa315 50%,
+              #322b05 50%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            background-position: 100%;
+
+            & {
+              /* Same as before */
+              transition: background-position 0.8s ease;
+            }
+
+            &:hover {
+              text-decoration: underline;
+              background-position: 0 100%;
+              text-decoration-color: #bfa315;
+            }
+
+            img {
+              margin-right: 12px;
+              height: 26px;
+              width: 26px;
+            }
           }
         }
       }

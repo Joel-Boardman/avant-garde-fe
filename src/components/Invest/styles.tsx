@@ -4,6 +4,10 @@ import { devices } from "../../layout/devices";
 export const Section = styled.section`
   padding: 160px 0px 200px;
 
+  @media (min-width: 1500px) {
+    min-height: 80vh;
+  }
+
   @media ${devices.laptopS} {
     padding: 160px 0px 150px;
   }
@@ -47,7 +51,7 @@ export const Content = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 21px;
+        /* line-height: 21px; */
         letter-spacing: -0.05em;
         font-family: "area-extended";
 

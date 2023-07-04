@@ -44,6 +44,8 @@ const Contact: React.FC = () => {
       setPhone(e.currentTarget.value);
     } else if (name === "message") {
       setMessage(e.currentTarget.value);
+    } else if (name === "fullName") {
+      setMessage(e.currentTarget.value);
     }
   };
 
@@ -219,19 +221,33 @@ const Contact: React.FC = () => {
             </p>
             <ul>
               <li>
-                <img src={PhoneSVG} alt="Phone" /> 0162 5469 859
+                <Link to="tel: 0161 528 5388">
+                  <img src={PhoneSVG} alt="Phone" /> 0162 5469 859
+                </Link>
               </li>
               <li>
-                <img src={InstaSVG} alt="Insta" />
-                View our Instagram
+                <Link
+                  to="https://www.instagram.com/avant_garde_global/"
+                  target="__blank"
+                >
+                  <img src={InstaSVG} alt="Insta" />
+                  View our Instagram
+                </Link>
               </li>
               <li>
-                <img src={EmailSVG} alt="Email" />
-                sales@avantgarde-global.co.uk
+                <Link to="mailto: sales@avantgarde-global.co.uk">
+                  <img src={EmailSVG} alt="Email" />
+                  sales@avantgarde-global.co.uk
+                </Link>
               </li>
               <li>
-                <img src={PinSVG} alt="Pin" />
-                Cheshire, SK9
+                <Link
+                  to="https://www.google.com/maps/place/SK9,+UK/@53.3192089,-2.3218782,12z/data=!3m1!4b1!4m6!3m5!1s0x487a4cde3ee57ded:0x95465e3c15562cad!8m2!3d53.3156958!4d-2.2380617!16s%2Fg%2F11bw3g4b4s?entry=ttu"
+                  target="__blank"
+                >
+                  <img src={PinSVG} alt="Pin" />
+                  Cheshire, SK9
+                </Link>
               </li>
             </ul>
           </div>

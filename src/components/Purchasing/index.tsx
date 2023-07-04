@@ -11,7 +11,8 @@ import watchPngThree from "../../assets/images/av-watch-3.png";
 import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
 
-import WatchOneImgMobile from "../../assets/images/purchase-watch-one.png";
+// import WatchOneImgMobile from "../../assets/images/purchase-watch-one.png";
+import WatchOneImgMobile from "../../assets/background/watch-side.png";
 import WatchTwoImgMobile from "../../assets/images/trusted-img.png";
 
 // Styles
@@ -107,7 +108,7 @@ const Purchasing: React.FC = () => {
       right: [
         <>
           <img
-            src={windowWidth > 960 ? WatchTwoImg : WatchTwoImgMobile}
+            src={windowWidth > 960 ? WatchTwoImg : WatchTwoImg}
             alt="Watch"
             className="right-img-two"
           />
