@@ -173,7 +173,7 @@ export const Content = styled.div<{ arrayIndex: number }>`
         flex-direction: row;
         overflow-x: auto;
         position: absolute;
-        width: 933px;
+        /* width: 933px; */
 
         &::-webkit-scrollbar {
           display: none;
@@ -282,8 +282,8 @@ export const Content = styled.div<{ arrayIndex: number }>`
       &__right {
         .watch-carousel {
           /* width: 618px; */
-          width: calc(100% + 2.8rem);
-
+          /* width: calc(100% + 2.8rem); */
+          width: auto;
           > .watchItem {
             min-width: 400px;
             > div {
