@@ -7,10 +7,11 @@ import { ButtonMobile } from "../Hero/styles";
 // Images
 import watchPngOne from "../../assets/images/av-watch-1.png";
 import watchPngTwo from "../../assets/images/av-watch-2.png";
-import watchPngThree from "../../assets/images/av-watch-3.png";
+import watchPngThree from "../../assets/images/av-watch-3-new.png";
 import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
 import { useNavigate } from "react-router-dom";
+
 const HeroMobile: React.FC = () => {
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState<boolean>(false);
