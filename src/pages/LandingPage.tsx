@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Hero from "../components/Hero";
+import HeroStatic from "../components/HeroStatic";
+
 import HeroMobile from "../components/HeroMobile";
 import Perfection from "../components/Perfection";
 import Trusted from "../components/Trusted";
@@ -13,6 +15,8 @@ import Living from "../components/Living";
 
 const LandingPage: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [loaded, setLoaded] = useState(true);
+  const [retrieveData, setRetrieveData] = useState<null | boolean>(false);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -26,9 +30,25 @@ const LandingPage: React.FC = () => {
     };
   });
 
+  useEffect(() => {
+    if (loaded) {
+      let a = sessionStorage.getItem("viewedSite") || "false";
+      setRetrieveData(JSON.parse(a));
+      console.log(a);
+    }
+  }, [loaded]);
+
+  useEffect(() => {
+    setLoaded(true);
+  });
+
   return (
     <>
-      {windowWidth >= 960 ? <Hero /> : <HeroMobile />}
+      {retrieveData ? (
+        <>{windowWidth >= 960 ? <HeroStatic /> : <HeroMobile />}</>
+      ) : (
+        <>{windowWidth >= 960 ? <Hero /> : <HeroMobile />}</>
+      )}
       <Perfection />
       <Trusted />
       <Excellence />

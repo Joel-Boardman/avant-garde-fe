@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Images
 import WatchBG from "../../assets/background/animation.png";

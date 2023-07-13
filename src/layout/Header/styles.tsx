@@ -69,6 +69,7 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   }
 
   @media ${devices.tabletL} {
+    padding: 42px;
     &.hide {
       background: transparent;
       transition: 0.5s;
@@ -80,7 +81,8 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
       }
     }
     &.show {
-      background: #000;
+      background-color: ${(props) =>
+        props.defaultHeader ? "#0d0d0d" : "#fff"};
       transition: 0.5s;
 
       .mobile-header {
@@ -148,11 +150,28 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
         border: none;
         outline: none;
 
+        &.btn-white {
+          &:before {
+            border: 1px solid white;
+          }
+          &:after {
+            border: 1px solid white;
+          }
+        }
+
+        &.btn-black {
+          &:before {
+            border: 1px solid black;
+          }
+          &:after {
+            border: 1px solid black;
+          }
+        }
+
         &:before {
           content: "";
           position: absolute;
           height: 1px;
-          border: 1px solid white;
           width: 100%;
           top: 0%;
           left: 0;
@@ -160,7 +179,6 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
 
         &:after {
           content: "";
-          border: 1px solid white;
           position: absolute;
           height: 1px;
           width: 100%;
@@ -200,14 +218,14 @@ export const HeaderSection = styled.header<{ defaultHeader: boolean }>`
   }
 
   @media ${devices.tablet} {
-    padding: 39px 15px;
+    padding: 42px 15px;
     > img {
       width: 200px;
     }
   }
 
   @media ${devices.mobileL} {
-    background-color: ${(props) => (props.defaultHeader ? "#000" : "#fff")};
+    background-color: ${(props) => (props.defaultHeader ? "#0d0d0d" : "#fff")};
 
     .mobile-header {
       padding-top: 120px;

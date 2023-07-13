@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Images
 import WatchImg from "../../assets/background/watch-img.png";
@@ -9,17 +11,33 @@ import watchPngThree from "../../assets/images/av-watch-3.png";
 import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
 
-import WatchOneImgMobile from "../../assets/images/purchase-watch-one.png";
+// import WatchOneImgMobile from "../../assets/images/purchase-watch-one.png";
+import WatchOneImgMobile from "../../assets/background/watch-side.png";
 import WatchTwoImgMobile from "../../assets/images/trusted-img.png";
 
 // Styles
 import { Section, Content } from "./styles";
 
 const Purchasing: React.FC = () => {
+  const navigate = useNavigate();
   const [arrayIndex, setArrayIndex] = useState<number>(0);
   const [animation, setAnimation] = useState<string>("");
-
+  const [fixItem, setFixItem] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [top, setTop] = useState(0);
+  const [elementHeight, setElementHeight] = useState<number>(0);
+  const myRef = useRef<null | HTMLElement>(null);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#services" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -50,6 +68,9 @@ const Purchasing: React.FC = () => {
             We proudly stock the likes of Rolex and Richard Mille, and can have
             these watches ready for you to admire upon your enquiry.
           </p>
+          <button className="mobile-btn" onClick={() => navigate("/contact")}>
+            Enquire Now
+          </button>
         </div>
       ),
       right: [
@@ -79,12 +100,15 @@ const Purchasing: React.FC = () => {
             price we recommend selling it for. Get in touch with us today to
             discuss this further.
           </p>
+          <button className="mobile-btn" onClick={() => navigate("/contact")}>
+            Enquire Now
+          </button>
         </div>
       ),
       right: [
         <>
           <img
-            src={windowWidth > 960 ? WatchTwoImg : WatchTwoImgMobile}
+            src={windowWidth > 960 ? WatchTwoImg : WatchTwoImg}
             alt="Watch"
             className="right-img-two"
           />
@@ -103,9 +127,12 @@ const Purchasing: React.FC = () => {
             {" "}
             We want to extend our passion and appreciation for watches directly
             to you: uncover the beauty and luxurious nature of Rolex, Patek
-            Phillipe, Richard Mille and more by enquiring about our current
+            Philippe, Richard Mille and more by enquiring about our current
             stock at Avant-Garde Global.
           </p>
+          <button className="mobile-btn" onClick={() => navigate("/contact")}>
+            Enquire Now
+          </button>
         </div>
       ),
       right: [
@@ -159,10 +186,80 @@ const Purchasing: React.FC = () => {
     }, 550);
   }, [animation]);
 
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      let el = document.querySelector(".testing");
+      var viewportOffset = el?.getBoundingClientRect();
+      if (viewportOffset?.top) {
+        setTop(viewportOffset?.top);
+      }
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    if (!top) return;
+
+    window.addEventListener("scroll", stick);
+    return () => {
+      window.removeEventListener("scroll", stick);
+    };
+  }, [top]);
+
+  const stick = () => {
+    let border = document.querySelector(".border");
+
+    let el = document.querySelector(".testing");
+    let section = document.querySelector(".purchase-section");
+
+    var viewportOffset = el?.getBoundingClientRect();
+
+    let a = window?.scrollY;
+    let b = el?.getBoundingClientRect()?.y;
+
+    let c = window?.scrollY;
+    let d = section?.getBoundingClientRect()?.y;
+
+    let res = typeof c === "number" && typeof d === "number" ? c + d : top;
+
+    let differenceInHeight =
+      typeof section?.getBoundingClientRect()?.height === "number" &&
+      typeof el?.getBoundingClientRect()?.height === "number"
+        ? (section?.getBoundingClientRect()?.height -
+            el?.getBoundingClientRect()?.height) /
+          2
+        : 0;
+
+    el?.getBoundingClientRect().height
+      ? setElementHeight(el?.getBoundingClientRect().height)
+      : setElementHeight(elementHeight);
+
+    if (windowWidth <= 1280) {
+      if (document.documentElement.scrollTop > res + differenceInHeight) {
+        el?.classList.add("fix-item");
+        section?.classList.add("extend");
+      } else {
+        el?.classList.remove("fix-item");
+        section?.classList.remove("extend");
+      }
+    } else {
+      if (document.documentElement.scrollTop > res + 70) {
+        el?.classList.add("fix-item");
+        section?.classList.add("extend");
+      } else {
+        el?.classList.remove("fix-item");
+        section?.classList.remove("extend");
+      }
+    }
+  };
+
   return (
-    <Section>
-      <div className="border">
-        <Content arrayIndex={arrayIndex}>
+    <Section className="purchase-section" height={elementHeight} ref={myRef}>
+      <div className={`${fixItem ? "fix-item" : ""} testing border`}>
+        <Content arrayIndex={arrayIndex} ref={ref}>
           <div className="options">
             <div className="options__container">
               <button

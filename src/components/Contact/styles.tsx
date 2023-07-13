@@ -51,7 +51,7 @@ export const Content = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 21px;
+        /* line-height: 21px; */
         letter-spacing: -0.05em;
         font-family: "area-extended";
 
@@ -113,6 +113,10 @@ export const Content = styled.div`
         line-height: 19px;
         letter-spacing: -0.05em;
         color: #322b05;
+
+        a {
+          color: #322b05;
+        }
       }
 
       .container input {
@@ -372,16 +376,43 @@ export const InfoContent = styled.div`
         list-style: none;
 
         li {
-          margin: 20px 0;
-          font-size: 14px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
+          a {
+            /* text-decoration: none; */
+            color: #322b05;
+            margin: 20px 0;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
-          img {
-            margin-right: 12px;
-            height: 26px;
-            width: 26px;
+            background: linear-gradient(
+              to right,
+              #bfa315,
+              #bfa315 50%,
+              #322b05 50%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            background-position: 100%;
+
+            & {
+              /* Same as before */
+              transition: background-position 0.8s ease;
+            }
+
+            &:hover {
+              text-decoration: underline;
+              background-position: 0 100%;
+              text-decoration-color: #bfa315;
+            }
+
+            img {
+              margin-right: 12px;
+              height: 26px;
+              width: 26px;
+            }
           }
         }
       }
@@ -521,5 +552,87 @@ export const Button = styled.button`
   @media ${devices.tablet} {
     padding: 12px 50px;
     font-size: 14px;
+  }
+`;
+
+export const ThankYouContent = styled.div`
+  text-align: center;
+  font-family: "area-extended";
+
+  max-width: 737px;
+  margin: 0 auto;
+  h4 {
+    color: #000;
+    font-size: 50px;
+    font-family: "casanova";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    margin-bottom: 29px;
+  }
+
+  p {
+    font-family: "area-extended";
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    margin-top: 50px;
+  }
+
+  @media ${devices.tabletL} {
+    h4 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media ${devices.tabletS} {
+    min-height: 40vh;
+    max-width: 550px;
+    h4 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    min-height: 40vh;
+    max-width: 550px;
+    h4 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 12px;
+    }
   }
 `;

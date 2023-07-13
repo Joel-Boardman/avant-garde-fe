@@ -1,128 +1,28 @@
-import styled, { keyframes } from "styled-components";
-
-const introH1 = keyframes`
-    0%{
-        color: grey;
-    }
-
-
-    20%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%);
-        color: grey;
-    }
-
-    40%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%);
-        color: grey;
-    }
-
-    50%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%);
-        color: grey;
-        text-align: left;
-    }
-
-    60%{
-        transform: translate(calc(-50% + 20px), -50%) scale(1.3);
-        color: white;
-
-    }
-
-    75%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%) scale(1.3);
-        color: white;
-    }
-
-    90%{
-        left: 50%;
-        top: 45%;
-        transform: translate(calc(-50% + 20px), -50%) scale(1.3);
-        color: white;
-    }
-`;
-
-const introH2 = keyframes`
-    0%{
-        
-    }
-
-
-    20%{
-        left: -50%;
-    }
-
-    50%{
-        left: -50%;
-    }
-
-    60%{
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    75%{
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    90%{
-        left: 50%;
-        transform: translateX(-50%);
-    }
-`;
-
-const introImg = keyframes`
-    0%{
-    }
-
-
-    20%{
-        top: -50%;
-        opacity: 0;
-    }
-
-    22%{
-        top: 150%;
-        opacity: 0;
-    }
-
-    40%{
-    }
-
-    50%{
-
-    }
-
-    60%{
-        top: 150%;
-        opacity: 0;
-    }
-
-    75%{
-        top: 150%;
-        opacity: 0;
-    }
-
-    90%{
-  
-    }
-`;
+import styled from "styled-components";
+import {
+  introBtn,
+  introH1,
+  introH2,
+  introImg,
+  introInfo,
+  btnIdle,
+  btnIdlePulse,
+} from "./animations";
 
 export const Section = styled.section`
-  padding: 90px 0 50px;
-  background: #0d0d0d;
-  height: 630px;
-
+  padding: 10px 0 50px;
+  background: rgb(12, 12, 12);
+  height: 805px;
   .border {
     display: flex;
+  }
+
+  @media (min-width: 560px) {
+    padding: 43px 0px 50px;
+  }
+
+  @media (min-width: 750px) {
+    padding: 70px 0px 30px;
   }
 `;
 
@@ -131,8 +31,46 @@ export const Content = styled.div`
   width: 100%;
   position: relative;
 
+  .btn-container {
+    position: absolute;
+    top: 46%;
+    right: 0;
+    animation: 1s linear 0.1s infinite alternate ${btnIdle};
+  }
+  .next-btn {
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #0d0d0d;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 50;
+
+    .chevron::before {
+      border-style: solid;
+      border-width: 3px 3px 0 0;
+      content: "";
+      display: inline-block;
+      height: 11px;
+      left: calc(50% - 2px);
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      position: absolute;
+      color: white;
+      vertical-align: top;
+      width: 11px;
+    }
+
+    .chevron.right:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+      animation: 1s linear 0.1s infinite alternate ${btnIdlePulse};
+    }
+  }
+
   .content__top {
-    height: 50%;
+    /* height: 50%; */
+    height: 330px;
     width: 100%;
 
     h1 {
@@ -151,13 +89,14 @@ export const Content = styled.div`
     img {
       position: absolute;
       width: 150px;
-      right: 0;
+      right: 8%;
       top: 30%;
       transform: translateY(-50%);
     }
   }
 
   .content__bottom {
+    min-height: 330px;
     h2 {
       color: rgba(255, 255, 255, 0.6);
       font-size: 14px;
@@ -166,14 +105,16 @@ export const Content = styled.div`
       text-transform: capitalize;
       position: absolute;
       width: 156px;
-      top: 55%;
+      top: 52%;
       left: 0;
     }
 
     .info-content {
       color: #fff;
-      font-size: 10px;
-      margin-top: 30px;
+      font-size: 12px;
+      /* margin-top: 10px; */
+      margin-top: 85px;
+      width: 80%;
     }
   }
 
@@ -188,6 +129,10 @@ export const Content = styled.div`
       }
     }
 
+    .btn-container {
+      animation: 2.5s ease-in 0.1s 1 ${introBtn};
+    }
+
     .content__bottom {
       h2 {
         text-transform: capitalize;
@@ -195,6 +140,47 @@ export const Content = styled.div`
       }
 
       .info-content {
+        animation: 2s ease-in 0.1s 1 ${introInfo};
+      }
+    }
+  }
+
+  @media (min-width: 560px) {
+    .content__top {
+      h1 {
+        font-size: 35px;
+      }
+
+      img {
+        width: 200px;
+        right: 13%;
+      }
+    }
+
+    .content__bottom {
+      h2 {
+        font-size: 18px;
+      }
+
+      .info-content {
+        font-size: 14px;
+        margin-top: 85px;
+      }
+    }
+  }
+
+  @media (min-width: 750px) {
+    .content__bottom {
+      .info-content {
+        margin-top: 62px;
+      }
+    }
+  }
+
+  @media (min-width: 810px) {
+    .content__bottom {
+      .info-content {
+        /* margin-top: 55px; */
       }
     }
   }

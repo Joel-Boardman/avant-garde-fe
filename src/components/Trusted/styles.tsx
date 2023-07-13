@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import TrustImg from "../../assets/images/trusted-img.png";
+// import TrustImg from "../../assets/images/trusted-img.png";
+import TrustImg from "../../assets/images/watch.png";
 
 // Devices
 import { devices } from "../../layout/devices";
@@ -88,7 +89,7 @@ const fadeOutRight = keyframes`
 `;
 
 export const Section = styled.section`
-  padding: 160px 0;
+  padding: 100px 0;
   background: white;
 
   @media ${devices.laptopS} {
@@ -105,6 +106,21 @@ export const Content = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  .mobile-btn {
+    /* display: none; */
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: 15px;
+
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-family: "area-extended";
+    line-height: 26px;
+    cursor: pointer;
+  }
 
   .ani-container,
   .info-container {
@@ -231,6 +247,11 @@ export const Content = styled.div`
   @media ${devices.tabletL} {
     align-items: flex-start;
 
+    .mobile-btn {
+      display: block;
+      font-size: 12px;
+    }
+
     .ani-container {
       background-image: url(${TrustImg});
       background-position: 0px 0px;
@@ -265,9 +286,8 @@ export const Content = styled.div`
         font-size: 12px;
       }
     }
-  }
-
-  .ani-container {
-    width: 26%;
+    .ani-container {
+      width: 26%;
+    }
   }
 `;

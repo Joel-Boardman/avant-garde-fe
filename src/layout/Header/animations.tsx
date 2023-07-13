@@ -4,7 +4,6 @@ export const rotateTop = keyframes`
   0%{
     position: absolute;
     height: 1px;
-    border: 1px solid white;
     width: 100%;
     top: 0%;
     left: 0;
@@ -35,7 +34,6 @@ export const rotateTopReverse = keyframes`
   100%{
     position: absolute;
     height: 1px;
-    border: 1px solid white;
     width: 100%;
     top: 0%;
     left: 0;
@@ -47,7 +45,6 @@ export const rotateBottom = keyframes`
   0%{
     position: absolute;
     height: 1px;
-    border: 1px solid white;
     width: 100%;
     top: 100%;
     left: 0;
@@ -78,7 +75,6 @@ export const rotateBottomReverse = keyframes`
   100%{
     position: absolute;
     height: 1px;
-    border: 1px solid white;
     width: 100%;
     top: 100%;
     left: 0;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
-  padding: 160px 0 100px;
+  padding: 100px 0 30px;
   background: white;
 
   @media ${devices.laptopS} {

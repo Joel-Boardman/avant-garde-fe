@@ -5,6 +5,9 @@ export const Section = styled.section`
   padding: 140px 0;
   background: white;
 
+  position: relative;
+  z-index: 250;
+
   .info {
     margin-bottom: 99px;
     h2,
@@ -120,6 +123,7 @@ export const Section = styled.section`
 
     .row {
       .item {
+        max-width: 291px;
         h4 {
           font-size: 14px;
           color: rgba(50, 43, 5, 1);

@@ -14,15 +14,6 @@ const fadeInSection = keyframes`
   100% {opacity: 1;}
 `;
 
-const fadeInBg = keyframes`
-  0%{
-    background-image: none;
-  }
-
-  80%{
-    background-image: none;
-  }
-`;
 export const Section = styled.section<{ background: string }>`
   background: black;
   min-height: 750px;
@@ -34,7 +25,6 @@ export const Section = styled.section<{ background: string }>`
   background-position: 100% 100%;
   background-repeat: no-repeat;
   transition: background-image 1s ease;
-  animation: 10.5s ease 0.1s 1 ${fadeInBg};
 
   @media ${devices.laptopS} {
     background-position: 100% 76%;
@@ -46,7 +36,6 @@ export const Content = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 80px 0 120px;
-  animation: 10s linear 0s forwards ${fadeInSection};
 
   .watch-info {
     width: 50%;

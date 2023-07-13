@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { devices } from "../../layout/devices";
 
 export const Section = styled.section`
-  padding: 95px 0px 79px;
+  padding: 100px 0px 50px;
   background: white;
   min-height: 800px;
+  position: relative;
+  z-index: 250;
 
   .border {
     padding: 0 11rem;
@@ -29,8 +31,7 @@ export const Section = styled.section`
 
   @media ${devices.mobileL} {
     min-height: 430px;
-    padding: 80px 0px 0px;
-
+    padding: 80px 0px 50px;
     .border {
       padding: 0 1.6rem;
     }

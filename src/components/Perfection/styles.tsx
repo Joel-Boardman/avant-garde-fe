@@ -21,13 +21,21 @@ export const Section = styled.section`
     rgba(0, 0, 0, 0.78) 100%
   );
 
-  video {
-    position: fixed;
-    top: 0%;
+  .sidebar {
+    position: absolute;
+    top: -200px;
     left: 0;
     width: 100%;
-    height: auto;
     z-index: -10;
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+    &.is-sticky {
+      position: fixed;
+      top: -98px;
+    }
   }
 
   .content {
@@ -69,6 +77,14 @@ export const Section = styled.section`
 
   @media ${devices.tabletL} {
     background: rgba(0, 0, 0, 0.8);
+
+    /* video {
+      top: -150px;
+      &.is-sticky {
+        position: fixed;
+        top: -80px;
+      }
+    } */
     .content {
       h2 {
         color: white;
@@ -78,10 +94,44 @@ export const Section = styled.section`
     }
   }
 
+  @media (max-width: 880px) {
+    .sidebar {
+      width: calc(100% + 200px);
+      height: auto;
+    }
+  }
+
   @media ${devices.tablet} {
     .content {
       p {
         font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 690px) {
+    .sidebar {
+      width: calc(100% + 250px);
+      left: -10%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 690px) {
+    .sidebar {
+      top: 0px;
+      width: calc(100% + 120px);
+      left: 0;
+
+      height: auto;
+
+      video {
+        height: auto;
+      }
+
+      &.is-sticky {
+        position: fixed;
+        top: 90px;
       }
     }
   }

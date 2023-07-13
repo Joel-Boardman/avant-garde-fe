@@ -6,6 +6,9 @@ export const FooterSection = styled.footer`
   padding: 60px 0 30px;
   color: white;
 
+  position: relative;
+  z-index: 250;
+
   h3 {
     font-style: normal;
     font-weight: 600;
@@ -110,6 +113,16 @@ export const FooterSection = styled.footer`
           }
         }
       }
+    }
+  }
+
+  &.extend {
+    min-height: auto;
+  }
+
+  @media (min-height: 1300px) {
+    &.extend {
+      min-height: 60vh !important;
     }
   }
 

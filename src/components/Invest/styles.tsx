@@ -4,6 +4,10 @@ import { devices } from "../../layout/devices";
 export const Section = styled.section`
   padding: 160px 0px 200px;
 
+  @media (min-width: 1500px) {
+    padding: 180px 0px 250px;
+  }
+
   @media ${devices.laptopS} {
     padding: 160px 0px 150px;
   }
@@ -47,7 +51,7 @@ export const Content = styled.div`
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 21px;
+        /* line-height: 21px; */
         letter-spacing: -0.05em;
         font-family: "area-extended";
 
@@ -93,6 +97,10 @@ export const Content = styled.div`
         line-height: 19px;
         letter-spacing: -0.05em;
         color: #322b05;
+
+        a {
+          color: #322b05;
+        }
       }
 
       .container input {
@@ -369,5 +377,92 @@ export const Button = styled.button`
   @media ${devices.tablet} {
     padding: 12px 50px;
     font-size: 14px;
+  }
+`;
+
+export const ThankYouContent = styled.div`
+  text-align: center;
+  font-family: "area-extended";
+
+  max-width: 737px;
+  margin: 0 auto;
+  h4 {
+    color: #000;
+    font-size: 50px;
+    font-family: "casanova";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    margin-bottom: 29px;
+  }
+
+  p {
+    font-family: "area-extended";
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    margin-top: 50px;
+  }
+
+  @media ${devices.tabletL} {
+    h4 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media ${devices.tabletS} {
+    min-height: 40vh;
+    max-width: 550px;
+    h4 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media ${devices.mobileL} {
+    min-height: 40vh;
+    max-width: 550px;
+    h4 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 12px;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+        display: none;
+      }
+    }
   }
 `;

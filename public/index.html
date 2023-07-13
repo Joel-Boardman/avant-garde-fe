@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Trusted luxury suppliers of the world's most famous watch brands, including Rolex, Patek Philippe, Audemars Piguet and more! Enquire today to discover what we have in stock that might be perfect for you..."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -36,7 +36,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Avant-Garde Global</title>
+    <title>Avant-Garde Global: Purveyors of Luxury Goods</title>
   </head>
   <body>
     <noscript></noscript>
@@ -52,4 +52,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="https://webservices.data-8.co.uk/javascript/loader.ashx?key=%REACT_APP_DATA8_KEY%&load=InternationalTelephoneValidation,EmailValidation,PredictiveAddress"></script>
+  <script>
+    window.predictiveAddress = new data8.predictiveaddress();
+  </script>
 </html>

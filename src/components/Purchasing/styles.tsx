@@ -5,16 +5,65 @@ const fadeIn = keyframes`
   0% {opacity: 0;}
   100% {opacity: 1;}
 `;
-export const Section = styled.section`
+export const Section = styled.section<{ height: number }>`
   padding: 70px 0 160px 0;
   background: #000;
+  overflow: hidden;
+
+  .border {
+    height: auto;
+    &.fix-item {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+      max-width: none;
+      /* max-width: 1400px; */
+      left: 50%;
+      transform: translateX(-50%);
+
+      @media (min-width: 1400px) {
+        padding: 0px 5.8rem;
+        max-width: 1440px;
+        /* padding: initial; */
+      }
+    }
+  }
+
+  &.extend {
+    height: ${(props) => props.height + 70 + 160}px;
+  }
+
+  @media (max-width: 1367px) {
+    .info {
+      &__left {
+        max-width: 530px !important;
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
 
   @media ${devices.laptopS} {
     padding: 70px 0px;
+
+    .info {
+      &__left {
+        max-width: 633px !important;
+      }
+    }
+    &.extend {
+      height: ${(props) => props.height + 70 * 2}px;
+    }
   }
 
   @media ${devices.mobileL} {
     padding: 40px 0px;
+
+    &.extend {
+      height: ${(props) => props.height + 40 * 2}px;
+    }
   }
 `;
 
@@ -22,6 +71,19 @@ export const Content = styled.div<{ arrayIndex: number }>`
   .fadeIn {
     animation-name: ${fadeIn};
     animation-duration: 0.5s;
+  }
+
+  .mobile-btn {
+    /* display: none; */
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "area-extended";
+    line-height: 26px;
+    cursor: pointer;
   }
 
   .options {
@@ -220,8 +282,11 @@ export const Content = styled.div<{ arrayIndex: number }>`
       &__right {
         .watch-carousel {
           /* width: 618px; */
-          width: calc(100% + 2.8rem);
-
+          /* width: calc(100% + 2.8rem); */
+          /* width: auto; */
+          /* width: 1000px; */
+          width: 200px;
+}
           > .watchItem {
             min-width: 400px;
             > div {
@@ -239,13 +304,17 @@ export const Content = styled.div<{ arrayIndex: number }>`
         .right-img-two {
           width: 270px;
           top: 37%;
-          opacity: 0.6;
+          /* opacity: 0.6; */
         }
       }
     }
   }
 
   @media ${devices.tabletL} {
+    .mobile-btn {
+      display: block;
+      font-size: 12px;
+    }
     .info {
       &__left {
         width: 155%;
@@ -266,6 +335,8 @@ export const Content = styled.div<{ arrayIndex: number }>`
         .right-img {
           width: 100%;
           right: -16%;
+          top: 0%;
+          width: auto;
         }
 
         .right-img-two {
@@ -321,19 +392,32 @@ export const Content = styled.div<{ arrayIndex: number }>`
     .info {
       height: 350px;
       &.mobile-col {
-        flex-direction: column;
-        height: 750px;
+        /* flex-direction: column;
+        height: 515px; */
 
         .info__right {
           width: 100% !important;
-        }
-
-        .watch-carousel {
-          top: 50px !important;
+          .watch-carousel {
+            top: 15px !important;
+            /* justify-content: center; */
+            justify-content: flex-start;
+            > .watchItem {
+              min-width: 200px !important;
+              div {
+                padding: 30px 0;
+                img {
+                  height: 165px !important;
+                  height: 212px !important;
+                }
+              }
+            }
+          }
         }
 
         .watch-info {
           width: 100%;
+          margin-right: 20px;
+
         }
       }
 
@@ -349,11 +433,44 @@ export const Content = styled.div<{ arrayIndex: number }>`
       &__right {
         width: 60%;
         .right-img {
-          width: 127%;
+          /* width: 127%; */
+          width: 132px;
           right: -25%;
-          top: 25%;
+          /* top: 25%; */
         }
       }
     }
+
+    .info {
+      &__right {
+        width: 100% !important;
+        .watch-carousel {
+          top: 50px !important;
+
+          > .watchItem {
+            min-width: 200px !important;
+            p {
+              font-size: 16px;
+            }
+            div {
+              img {
+                height: 165px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media ${devices.mobile} {
+    .info {
+      &__left {
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+  
   }
 `;

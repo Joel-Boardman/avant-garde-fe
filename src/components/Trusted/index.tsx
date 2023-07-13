@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Images
 import WatchImg from "../../assets/images/watch.png";
@@ -9,9 +10,24 @@ import WatchSilverImg from "../../assets/images/watch-silver.png";
 import { Section, Content } from "./styles";
 
 const Trusted: React.FC = () => {
+  const navigate = useNavigate();
   const [mouseEnter, setMouseEnter] = useState("");
+  const myRef = useRef<null | HTMLElement>(null);
+
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === "#about" && myRef?.current) {
+      myRef?.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "start",
+      });
+    }
+  }, [location]);
+
   return (
-    <Section>
+    <Section ref={myRef}>
       <div className="border">
         <Content>
           <div
@@ -45,6 +61,14 @@ const Trusted: React.FC = () => {
               Global, you can rest assured that you’re receiving only
               exceptional customer service and guidance concerning all of our
               stock.
+            </p>
+            <p>
+              <button
+                className="mobile-btn"
+                onClick={() => navigate("/contact")}
+              >
+                Enquire Now
+              </button>
             </p>
           </div>
         </Content>

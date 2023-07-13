@@ -2,19 +2,21 @@ import React, { useState, useEffect } from "react";
 
 // Styles
 import { Section, Content } from "./styles";
-import { Button } from "../Hero/styles";
+import { ButtonMobile } from "../Hero/styles";
 
 // Images
 import watchPngOne from "../../assets/images/av-watch-1.png";
 import watchPngTwo from "../../assets/images/av-watch-2.png";
-import watchPngThree from "../../assets/images/av-watch-3.png";
+import watchPngThree from "../../assets/images/av-watch-3-new.png";
 import watchPngFour from "../../assets/images/av-watch-4.png";
 import watchPngFive from "../../assets/images/av-watch-5.png";
-const HeroMobile: React.FC = () => {
-  const [loaded, setLoaded] = useState<boolean>(false);
+import { useNavigate } from "react-router-dom";
 
+const HeroMobile: React.FC = () => {
+  const navigate = useNavigate();
+  const [loaded, setLoaded] = useState<boolean>(false);
   const [arrayIndex, setArrayIndex] = useState<number>(0);
-  const [arrayIndexImg, setArrayIndexImg] = useState<number>(0);
+  const [arrayIndexDelay, setArrayIndexDelay] = useState<number>(0);
   const [disable, setDisable] = useState<boolean>(false);
   const [animation, setAnimation] = useState("");
   const watchInfo = [
@@ -23,25 +25,19 @@ const HeroMobile: React.FC = () => {
       type: "Skeleton",
       content: (
         <>
-          <br />
           <p>
-            The product of decades of innovation and inspiration, each model
-            produced by Audemars Piguet has accounted for evolutions of style
-            and technology to create timepieces tailored to every individual’s
-            desires.
+            This stainless steel ‘Skeleton’ model visually showcases the expert
+            craftsmanship inside every Audemars Piguet watch: the exposed
+            mechanics of this particular model are something to truly remark at.
+            Enquire with us today to discover the availability of this
+            particular model.
           </p>
+
           <br />
-          <p>
-            In particular, this stainless steel ‘Skeleton’ model visually
-            showcases the expert craftsmanship inside every Audemars Piguet
-            watch: the exposed mechanics of this particular model are something
-            to truly remark at. Enquire with us today to discover the
-            availability of this particular model.
-          </p>
           <br />
-          <Button>
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
-          </Button>
+          </ButtonMobile>
         </>
       ),
     },
@@ -50,14 +46,6 @@ const HeroMobile: React.FC = () => {
       type: "5980R",
       content: (
         <>
-          <br />
-          <p>
-            Utilising Genevan artistry and craftsmanship in every single one of
-            their watches, Patek Philippe stands as a premier choice for those
-            seeking a sophisticated, elegant design in their choice of
-            timepiece.
-          </p>
-          <br />
           <p>
             The 5980R model was designed to bring incomparable levels of class
             and prestige to the wearer in whatever they were doing. From people
@@ -66,24 +54,39 @@ const HeroMobile: React.FC = () => {
             a premier option. 
           </p>
           <br />
-          <Button>
+          <br />
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
-          </Button>
+          </ButtonMobile>
+        </>
+      ),
+    },
+
+    {
+      title: "Rolex",
+      type: "Daytona Platinum",
+      content: (
+        <>
+          <p>
+            The Daytona model, offered by Avant-Garde Global in platinum, allows
+            you to take immense pride wherever you’re wearing it. The infusion
+            of this noble metal invokes an added sense of prestige and suave
+            that sometimes only a Rolex can provide you. Enquire with us today
+            to discover the availability of this particular model.
+          </p>
+          <br />
+          <br />
+          <ButtonMobile onClick={() => navigate("/contact")}>
+            <span>Enquire Now</span>
+          </ButtonMobile>
         </>
       ),
     },
     {
-      title: "Patek Philippe",
-      type: "5711R",
+      title: "Rolex",
+      type: "Batgirl",
       content: (
         <>
-          <br />
-          <p>
-            Specially designed in accordance with values of uniqueness and
-            respect, you can enjoy pure perfection courtesy of any and all
-            available Patek Philippe watches. 
-          </p>
-          <br />
           <p>
             This stunning timepiece, the Nautilus 5711R, boasts an immaculate
             stainless steel casing, and comes fitted with an eye-catching blue
@@ -97,62 +100,35 @@ const HeroMobile: React.FC = () => {
             collection.
           </p>
           <br />
-          <Button>
+          <br />
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
-          </Button>
+          </ButtonMobile>
         </>
       ),
     },
     {
-      title: "Rolex",
-      type: "Daytona Platinum",
+      title: "Patek Philippe",
+      type: "5711R",
       content: (
         <>
-          <br />
           <p>
-            Crafted with precious metals whilst infused with intricate
-            technology and mechanics, every Rolex is specially designed to
-            challenge and surpass the concept of excellence itself. 
+            This stunning timepiece, the Nautilus 5711R, boasts an immaculate
+            stainless steel casing, and comes fitted with an eye-catching blue
+            dial and sapphire crystal glass. 
           </p>
           <br />
           <p>
-            The Daytona model, offered by Avant-Garde Global in platinum, allows
-            you to take immense pride wherever you’re wearing it. The infusion
-            of this noble metal invokes an added sense of prestige and suave
-            that sometimes only a Rolex can provide you. Enquire with us today
-            to discover the availability of this particular model.
+            Described as boasting “casual elegance” since its first creation,
+            the 5711R epitomises all that Patek Philippe stands for. Enquire
+            with us today to see how you can add this beautiful watch to your
+            collection.
           </p>
           <br />
-          <Button>
+          <br />
+          <ButtonMobile onClick={() => navigate("/contact")}>
             <span>Enquire Now</span>
-          </Button>
-        </>
-      ),
-    },
-    {
-      title: "Rolex",
-      type: "Batgirl",
-      content: (
-        <>
-          <br />
-          <p>
-            Though they may demand a high-level of expertise to create, Rolex
-            watches are perfect to enjoy wearing across professional and more
-            casual experiences, and are a testament to the class and quality
-            conveyed through luxury watches. 
-          </p>
-          <b />
-          <p>
-            This model, affectionately dubbed ‘The Batgirl’ for its more-refined
-            design and visually stunning black and blue bezel, is one of the
-            latest offerings from the renowned Switzerland-based manufacturer.
-            Enquire with us today to explore how you can make ‘The Batgirl’ your
-            next watch purchase. 
-          </p>
-          <br />
-          <Button>
-            <span>Enquire Now</span>
-          </Button>
+          </ButtonMobile>
         </>
       ),
     },
@@ -160,9 +136,9 @@ const HeroMobile: React.FC = () => {
   const paginationImages = [
     watchPngOne,
     watchPngTwo,
-    watchPngThree,
     watchPngFour,
     watchPngFive,
+    watchPngThree,
   ];
 
   useEffect(() => {
@@ -171,7 +147,7 @@ const HeroMobile: React.FC = () => {
         setAnimation("");
         setDisable(false);
       }
-    }, 2100);
+    }, 2600);
 
     return () => clearTimeout(resetTimeout);
   }, [animation, loaded]);
@@ -179,7 +155,12 @@ const HeroMobile: React.FC = () => {
   useEffect(() => {
     const resetTimeoutImg = setTimeout(() => {
       if (loaded) {
-        setArrayIndexImg(arrayIndexImg + 1);
+        let a = arrayIndexDelay + 1;
+        if (a < paginationImages.length) {
+          setArrayIndexDelay(arrayIndexDelay + 1);
+        } else {
+          setArrayIndexDelay(0);
+        }
       }
     }, 500);
 
@@ -197,26 +178,41 @@ const HeroMobile: React.FC = () => {
     setLoaded(true);
   });
 
+  const handleIncrement = () => {
+    console.log(paginationImages.length);
+    let a = arrayIndex + 1;
+    if (a < paginationImages.length) {
+      setArrayIndex(arrayIndex + 1);
+    } else {
+      setArrayIndex(0);
+    }
+  };
+
   return (
     <Section>
       <div className="border">
         <Content className={`${animation}`}>
           <div className="content__top">
             <h1>{watchInfo[arrayIndex].title}</h1>
-            <img src={paginationImages[arrayIndexImg]} alt="" />
+            <img src={paginationImages[arrayIndexDelay]} alt="" />
+          </div>
+          <div className="btn-container">
+            <button
+              onClick={handleIncrement}
+              disabled={disable ? true : false}
+              className="next-btn"
+            >
+              <span className="chevron right"></span>
+            </button>
           </div>
           <div className="content__bottom">
-            <h2>{watchInfo[arrayIndex].type}</h2>
-            <div className="info-content">{watchInfo[arrayIndex].content}</div>
+            <h2>{watchInfo[arrayIndexDelay].type}</h2>
+            <div className="info-content">
+              {watchInfo[arrayIndexDelay].content}
+            </div>
           </div>
         </Content>
       </div>
-      <button
-        onClick={() => setArrayIndex(arrayIndex + 1)}
-        disabled={disable ? true : false}
-      >
-        Click Me
-      </button>
     </Section>
   );
 };

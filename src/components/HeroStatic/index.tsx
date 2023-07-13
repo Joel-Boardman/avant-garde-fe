@@ -19,29 +19,10 @@ import watchPngBackgroundFive from "../../assets/background/watch-five.png";
 // Styles
 import { Section, Content, Button } from "./styles";
 
-// Components
-import HeroAnimation from "../HeroAnimation";
-
 const Hero: React.FC = () => {
   const navigate = useNavigate();
   const [animation, setAnimation] = useState<string>("");
   const [arrayIndex, setArrayIndex] = useState<number>(0);
-
-  const [loaded, setLoaded] = useState(true);
-  const [retrieveData, setRetrieveData] = useState<null | boolean>(false);
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
-
-  useEffect(() => {
-    if (loaded) {
-      setTimeout(() => {
-        sessionStorage.setItem("viewedSite", JSON.stringify(true));
-      }, 10000);
-    }
-  }, [loaded]);
-
   const watchInfo = [
     {
       background: watchPngBackgroundOne,
@@ -235,7 +216,6 @@ const Hero: React.FC = () => {
   return (
     <Section background={watchInfo[arrayIndex].background}>
       <div className="border">
-        <HeroAnimation />
         <Content>
           <div className="watch-info">
             <div className={`title ${animation}`}>
